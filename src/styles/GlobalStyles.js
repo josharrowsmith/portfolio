@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyles = createGlobalStyle`
   :root {
@@ -72,6 +72,6 @@ const GlobalStyles = createGlobalStyle`
     display: inline-block;
   }
 
-`;
+`
 
-export default GlobalStyles;
+export default GlobalStyles
