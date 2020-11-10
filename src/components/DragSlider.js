@@ -6,24 +6,53 @@ import { ScaleBox } from './ScaleBox'
 
 export const DragSlider = ({ children }) => {
   const ref = useRef(null)
-  const x = useMotionValue(0)
+  const y = useMotionValue(0)
 
   const [sliderWidth, setSliderWidth] = useState(0)
   const [sliderChildrenWidth, setSliderChildrenWidth] = useState(0)
   const [sliderConstraints, setSliderConstraints] = useState(0)
 
+  console.log(sliderWidth)
+
+  useEffect(() => {
+    const calcSliderChildrenWidth = () => {
+      setSliderChildrenWidth(
+        Array.from(ref.current.childNodes).reduce(
+          (acc, node) => acc + node.clientWidth,
+          0
+        )
+      )
+    }
+
+    calcSliderChildrenWidth()
+
+    const calcSliderWidth = () => {
+      setSliderWidth(ref.current.clientWidth)
+    }
+
+    calcSliderWidth()
+    window.addEventListener('resize', calcSliderWidth)
+
+    const calcSliderConstraints = () => {
+      setSliderConstraints(sliderChildrenWidth - sliderWidth)
+    }
+
+    calcSliderConstraints()
+    window.addEventListener('resize', calcSliderConstraints)
+  }, [ref, sliderChildrenWidth, sliderWidth])
+
   const SliderWrap = ({ children }) => (
-    <div style={{ overflowX: 'hidden' }}>
+    <div style={{ overflowY: 'hidden' }}>
       <motion.div
         ref={ref}
         drag="y"
-        initial={{ x: 0 }}
-        style={{ x }}
+        initial={{ y: 0 }}
+        style={{ y }}
         dragConstraints={{
-          left: `${-sliderConstraints}`,
-          right: 0,
+          bottom: 0,
+          top: `${sliderConstraints}`,
         }}
-        dragTransition={(100, 10)}
+        // dragTransition={(100, 10)}
       >
         {children}
       </motion.div>
