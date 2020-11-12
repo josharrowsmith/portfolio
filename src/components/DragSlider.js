@@ -4,6 +4,13 @@ import { motion, useMotionValue } from 'framer-motion'
 import { IntersectionObserver } from './IntersectionObserver'
 import { ScaleBox } from './ScaleBox'
 
+const Slider = styled(motion.div)`
+  cursor: grab;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+
 export const DragSlider = ({ children }) => {
   const ref = useRef(null)
   const y = useMotionValue(0)
@@ -11,8 +18,6 @@ export const DragSlider = ({ children }) => {
   const [sliderWidth, setSliderWidth] = useState(0)
   const [sliderChildrenWidth, setSliderChildrenWidth] = useState(0)
   const [sliderConstraints, setSliderConstraints] = useState(0)
-
-  console.log(sliderWidth)
 
   useEffect(() => {
     const calcSliderChildrenWidth = () => {
@@ -43,19 +48,19 @@ export const DragSlider = ({ children }) => {
 
   const SliderWrap = ({ children }) => (
     <div style={{ overflowY: 'hidden' }}>
-      <motion.div
+      <Slider
         ref={ref}
         drag="y"
         initial={{ y: 0 }}
         style={{ y }}
         dragConstraints={{
+          top: `${-sliderConstraints}`,
           bottom: 0,
-          top: `${sliderConstraints}`,
         }}
-        // dragTransition={(100, 10)}
+        dragTransition={(100, 10)}
       >
         {children}
-      </motion.div>
+      </Slider>
     </div>
   )
   return (

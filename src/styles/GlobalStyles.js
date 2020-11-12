@@ -15,6 +15,10 @@ const GlobalStyles = createGlobalStyle`
     font-size: 10px;
   }
 
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
   body {
     font-size: 2rem;
   }

@@ -9,11 +9,9 @@ export const Box = styled.div`
   font-weight: 700;
   color: #e6e6e6;
   display: flex;
-  flex-shrink: 0;
   justify-content: center;
   align-items: center;
 `
 export const Flex = styled(Box)`
   display: flex;
 `
-export const FlexItem = styled(Flex)``
