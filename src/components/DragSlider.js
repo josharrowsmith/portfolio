@@ -10,6 +10,10 @@ const Slider = styled(motion.div)`
   flex-direction: column;
   align-items: center;
 `
+Slider.defaultProps = {
+  display: 'flex',
+  justifyContent: 'space-between',
+}
 
 export const DragSlider = ({ children }) => {
   const ref = useRef(null)
@@ -64,14 +68,12 @@ export const DragSlider = ({ children }) => {
     </div>
   )
   return (
-    <>
-      <SliderWrap>
-        {React.Children.map(children, child => (
-          <IntersectionObserver reset="true">
-            <ScaleBox>{React.cloneElement(child)}</ScaleBox>
-          </IntersectionObserver>
-        ))}
-      </SliderWrap>
-    </>
+    <SliderWrap>
+      {React.Children.map(children, child => (
+        <IntersectionObserver reset="true">
+          <ScaleBox>{React.cloneElement(child)}</ScaleBox>
+        </IntersectionObserver>
+      ))}
+    </SliderWrap>
   )
 }

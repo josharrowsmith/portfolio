@@ -1,36 +1,42 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
-import Layout from '../components/Layout'
+import { motion } from 'framer-motion'
+import Layout from '../components/layout'
 import { DragSlider } from '../components/DragSlider'
-import { Flex } from '../components/Box'
-
-const Container = styled.div`
-  background-color: #000;
-  height: 100vh;
-  overflow-y: hidden;
-  flex: 1 0 1px;
-`
+import { FlexItem } from '../components/Box'
 
 const HomePageGrid = styled.div`
-  display: flex;
+  display: grid;
+  gap: 2rem;
+  justify-items: center;
+  --columns: 2;
+  grid-template-columns: repeat(var(--columns), minmax(auto, 1fr));
+  @media (max-width: 800px) {
+    --columns: 1;
+  }
+`
+export const Container = styled.div`
+  margin: 0 auto;
+  background-color: #000;
+  height: 100vh;
+  width: 400px;
+  overflow-y: hidden;
 `
 
 const IndexPage = () => (
   <Layout>
     <HomePageGrid>
-      <h1>JOSH ARROWSMITH</h1>
-      <>
-        <Container>
-          <DragSlider>
-            {[...Array(10).keys()].map((item, key) => (
-              <Flex key={key} width={300}>
-                {item + 1}
-              </Flex>
-            ))}
-          </DragSlider>
-        </Container>
-      </>
+      <h1>hey</h1>
+      <Container>
+        <DragSlider>
+          {[...Array(10).keys()].map((item, key) => (
+            <FlexItem key={key} width={300}>
+              {item + 1}
+            </FlexItem>
+          ))}
+        </DragSlider>
+      </Container>
     </HomePageGrid>
   </Layout>
 )
