@@ -1,10 +1,8 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import styled from 'styled-components'
-import { motion } from 'framer-motion'
 import Layout from '../components/layout'
 import { DragSlider } from '../components/DragSlider'
-import { FlexItem } from '../components/Box'
+import { Container, FlexItem } from '../components/Box'
 
 const HomePageGrid = styled.div`
   display: grid;
@@ -16,27 +14,45 @@ const HomePageGrid = styled.div`
     --columns: 1;
   }
 `
-export const Container = styled.div`
-  margin: 0 auto;
-  background-color: #000;
-  height: 100vh;
-  width: 400px;
-  overflow-y: hidden;
+const Right = styled.div`
+  display: flex;
+`
+
+const DragMe = styled.h1`
+  transform: rotate(90deg);
+  width: 300px;
+  align-self: center;
+  justify-self: center;
+  position: relative;
+  display: flex;
+  &:after {
+    content: "";
+    height: 2px;
+    width: 200px;
+    background-color: #000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+}
 `
 
 const IndexPage = () => (
   <Layout>
     <HomePageGrid>
       <h1>hey</h1>
-      <Container>
-        <DragSlider>
-          {[...Array(10).keys()].map((item, key) => (
-            <FlexItem key={key} width={300}>
-              {item + 1}
-            </FlexItem>
-          ))}
-        </DragSlider>
-      </Container>
+      <Right>
+        <Container>
+          <DragSlider>
+            {[...Array(10).keys()].map((item, key) => (
+              <FlexItem key={key} width={300}>
+                {item + 1}
+              </FlexItem>
+            ))}
+          </DragSlider>
+        </Container>
+        <DragMe>Drag Me</DragMe>
+      </Right>
     </HomePageGrid>
   </Layout>
 )
