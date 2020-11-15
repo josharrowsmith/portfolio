@@ -13,10 +13,7 @@ export const Box = styled.div`
   font-size: 72px;
   font-weight: 700;
   color: #e6e6e6;
-  text-align: center;
   margin-bottom: 30px;
-  justify-content: center;
-  align-items: center;
 `
 
 export const Flex = styled(Box)`

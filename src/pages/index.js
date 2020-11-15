@@ -16,15 +16,24 @@ const HomePageGrid = styled.div`
 `
 const Right = styled.div`
   display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: flex-end;
+  align-items: center;
 `
 
 const DragMe = styled.h1`
   transform: rotate(90deg);
-  width: 300px;
-  align-self: center;
-  justify-self: center;
-  position: relative;
-  display: flex;
+  &:before {
+    content: "";
+    height: 2px;
+    width: 200px;
+    background-color: #000;
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-right: 1rem;
+  }
   &:after {
     content: "";
     height: 2px;
@@ -32,7 +41,7 @@ const DragMe = styled.h1`
     background-color: #000;
     position: absolute;
     top: 50%;
-    left: 50%;
+    margin-left: 1rem;
   }
 }
 `
@@ -40,7 +49,9 @@ const DragMe = styled.h1`
 const IndexPage = () => (
   <Layout>
     <HomePageGrid>
-      <h1>hey</h1>
+      <div>
+        <h1>hey</h1>
+      </div>
       <Right>
         <Container>
           <DragSlider>

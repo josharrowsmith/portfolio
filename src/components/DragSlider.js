@@ -8,12 +8,7 @@ const Slider = styled(motion.div)`
   cursor: grab;
   display: flex;
   flex-direction: column;
-  align-items: center;
 `
-Slider.defaultProps = {
-  display: 'flex',
-  justifyContent: 'space-between',
-}
 
 export const DragSlider = ({ children }) => {
   const ref = useRef(null)
