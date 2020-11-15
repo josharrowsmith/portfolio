@@ -1,8 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
+import { motion } from 'framer-motion'
 import Layout from '../components/layout'
 import { DragSlider } from '../components/DragSlider'
 import { Container, FlexItem } from '../components/Box'
+import Scroll from '../assets/images/scroll.svg'
 
 const HomePageGrid = styled.div`
   display: grid;
@@ -45,12 +47,21 @@ const DragMe = styled.h1`
   }
 }
 `
+const StyledScrollImage = styled(motion.img)`
+  will-change: transform;
+`
 
 const IndexPage = () => (
   <Layout>
     <HomePageGrid>
       <div>
         <h1>hey</h1>
+        <StyledScrollImage
+          src={Scroll}
+          alt="Scroll down!"
+          animate={{ rotate: -360 }}
+          transition={{ duration: 10, loop: Infinity, ease: 'linear' }}
+        />
       </div>
       <Right>
         <Container>

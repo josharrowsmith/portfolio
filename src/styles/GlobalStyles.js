@@ -13,8 +13,6 @@ const GlobalStyles = createGlobalStyle`
     background-size: 450px;
     background-attachment: fixed;
     font-size: 10px;
-    overflow-y: hidden;
-    height: 100vh;
   }
 
   *, *::before, *::after {
@@ -23,8 +21,6 @@ const GlobalStyles = createGlobalStyle`
 
   body {
     font-size: 2rem;
-    overflow-Y: hidden;
-    height: 100vh;
   }
 
   fieldset {
