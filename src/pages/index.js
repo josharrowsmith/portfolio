@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import Layout from '../components/layout'
 import { DragSlider } from '../components/DragSlider'
 import { Container, FlexItem } from '../components/Box'
-import Scroll from '../assets/images/scroll.svg'
+import Scroll from '../assets/images/hire.svg'
 
 const HomePageGrid = styled.div`
   display: grid;
@@ -49,6 +49,8 @@ const DragMe = styled.h1`
 `
 const StyledScrollImage = styled(motion.img)`
   will-change: transform;
+  width: 300px;
+  height: 300px;
 `
 
 const IndexPage = () => (
