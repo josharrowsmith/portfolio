@@ -15,7 +15,26 @@ const HomePageGrid = styled.div`
   @media (max-width: 800px) {
     --columns: 1;
   }
+  height: calc(100vh - 4rem);
 `
+const AboutMeGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(var(--columns), minmax(auto, 1fr));
+  --columns: 2;
+`
+const AboutSection = styled.div`
+  display: grid;
+  grid-template-columns: 20% 1fr;
+  --columns: 2;
+  align-items: center;
+  h1 {
+    writing-mode: vertical-rl;
+    align-self: center;
+    justify-self: center;
+    font-size: 7rem;
+  }
+`
+
 const Right = styled.div`
   display: flex;
   width: 100%;
@@ -56,15 +75,22 @@ const StyledScrollImage = styled(motion.img)`
 const IndexPage = () => (
   <Layout>
     <HomePageGrid>
-      <div>
-        <h1>hey</h1>
-        <StyledScrollImage
-          src={Scroll}
-          alt="Scroll down!"
-          animate={{ rotate: -360 }}
-          transition={{ duration: 10, loop: Infinity, ease: 'linear' }}
-        />
-      </div>
+      <AboutMeGrid>
+        <div>
+          <h1>hey</h1>
+        </div>
+        <AboutSection>
+          <h1>Josh Arrowsmith</h1>
+          <p>
+            I'm a software engineer. I specialize in Front-end development which
+            is building out the visual components of a website. I build
+            interactive, responsive and beautiful websites through carefully
+            crafted code and user-centric design. I work with technologies like
+            HTML5, CSS3 and Javascript. I'm currently a freelancer and available
+            to work.
+          </p>
+        </AboutSection>
+      </AboutMeGrid>
       <Right>
         <Container>
           <DragSlider>
