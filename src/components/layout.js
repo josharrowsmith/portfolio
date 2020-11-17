@@ -7,7 +7,8 @@ import Typography from '../styles/Typography'
 
 const ContentStyles = styled.div`
   background: white;
-  padding: 2rem;
+  padding: 4rem;
+  height: 100vh;
 `
 const Cursor = styled(motion.div)`
   position: fixed;
@@ -35,6 +36,7 @@ export default function Layout({ children }) {
       cursorY.set(e.clientY - 16)
     }
 
+    console.log(window.addEventListener('touchmove', moveCursor))
     window.addEventListener('mousemove', moveCursor)
 
     return () => {

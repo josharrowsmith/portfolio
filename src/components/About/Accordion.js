@@ -30,15 +30,14 @@ const accordionIds = [
   },
 ]
 
-export const AccordionHeader = styled(motion.div)`
+const AccordionHeader = styled(motion.div)`
   width: 100%;
   display: flex;
   align-items: center;
-  cursor: pointer;
   font-size: 2.5rem;
 `
 
-export const AccordionIcon = styled.div`
+const AccordionIcon = styled.div`
   display: flex;
   align-items: center;
   height: 100%;
@@ -51,7 +50,7 @@ export const AccordionIcon = styled.div`
   }
 `
 
-export const AccordionContent = styled(motion.div)`
+const AccordionContent = styled(motion.div)`
   overflow: hidden;
   padding-left: 40px;
   display: flex;

@@ -13,17 +13,14 @@ const HomePageGrid = styled.div`
   @media (max-width: 800px) {
     --columns: 1;
   }
-  height: calc(100vh - 4rem);
 `
 
 function IndexPage() {
   return (
-    <Layout>
-      <HomePageGrid>
-        <About />
-        <Projects />
-      </HomePageGrid>
-    </Layout>
+    <HomePageGrid>
+      <About />
+      <Projects />
+    </HomePageGrid>
   )
 }
 

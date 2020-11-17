@@ -16,11 +16,17 @@ const GlobalStyles = createGlobalStyle`
     font-size: 10px;
   }
 
-  
+  * {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: -moz-none;
+    -o-user-select: none;
+    user-select: none;
+  }
 
   *, *::before, *::after {
     box-sizing: border-box;
-    /* cursor: none; */
+    cursor: none;
   }
 
   body {

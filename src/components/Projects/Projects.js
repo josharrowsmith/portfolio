@@ -6,9 +6,10 @@ import { Container, FlexItem } from '../Slider/Box'
 const ProjectsSection = styled.div`
   display: flex;
   width: 100%;
-  height: 100%;
+  height: calc(100vh - 4rem);
   justify-content: flex-end;
   align-items: center;
+  overflow-y: hidden;
 `
 export const DragMe = styled.h1`
   transform: rotate(90deg);
