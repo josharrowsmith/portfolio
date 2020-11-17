@@ -13,7 +13,9 @@ export const Box = styled.div`
   font-size: 72px;
   font-weight: 700;
   color: #e6e6e6;
-  margin-bottom: 30px;
+  margin-bottom: 6rem;
+  justify-content: center;
+  align-items: center;
 `
 
 export const Flex = styled(Box)`
