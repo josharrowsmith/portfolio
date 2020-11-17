@@ -33,6 +33,7 @@ const ContactGrid = styled.div`
   display: flex;
   flex-direction: row;
   gap: 1rem;
+  justify-content: center;
 `
 
 const About = () => (

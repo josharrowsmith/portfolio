@@ -57,6 +57,7 @@ export const AccordionContent = styled(motion.div)`
   display: flex;
   flex-direction: column;
   font-size: 2rem;
+  text-transform: lowercase;
 `
 
 const AccordionSetup = ({ details, expanded, setExpanded }) => {
