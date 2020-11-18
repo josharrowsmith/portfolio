@@ -5,12 +5,12 @@ export const INITIAL_COLOR_MODE_CSS_PROP = '--initial-color-mode'
 
 export const COLORS = {
   text: {
-    light: 'hsl(0deg, 0%, 10%)', // white
-    dark: 'hsl(0deg, 0%, 100%)', // near-black
+    light: '#000',
+    dark: '#fff',
   },
   background: {
-    light: 'hsl(0deg, 0%, 100%)', // white
-    dark: 'hsl(250deg, 70%, 7%)', // navy navy blue
+    light: '#fff',
+    dark: '#000',
   },
 }
 
@@ -99,6 +99,11 @@ const GlobalStyles = createGlobalStyle`
     transform: rotate(-2deg);
     position: relative;
     display: inline-block;
+  }
+
+  img {
+    color: var(--color-text);
+    fill: currentColor;
   }
 
 `

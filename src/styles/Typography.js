@@ -9,7 +9,7 @@ const Typography = createGlobalStyle`
   }
   html {
     font-family: FrenchFries, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: var(--black);
+    color: var(--color-text);
   }
   p, li {
     letter-spacing: 0.5px;
@@ -20,7 +20,7 @@ const Typography = createGlobalStyle`
     margin: 0;
   }
   a {
-    color: var(--black);
+    color: var(--color-text);
     text-decoration-color: var(--red);
     /* Chrome renders this weird with this font, so we turn it off */
     text-decoration-skip-ink: none;

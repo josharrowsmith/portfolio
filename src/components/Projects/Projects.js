@@ -17,7 +17,7 @@ export const DragMe = styled.h1`
     content: '';
     height: 2px;
     width: 200px;
-    background-color: #000;
+    background: var(--color-text);
     position: absolute;
     top: 50%;
     right: 100%;
@@ -27,7 +27,7 @@ export const DragMe = styled.h1`
     content: '';
     height: 2px;
     width: 200px;
-    background-color: #000;
+    background: var(--color-text);
     position: absolute;
     top: 50%;
     margin-left: 1rem;

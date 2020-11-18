@@ -47,6 +47,7 @@ const AccordionIcon = styled.div`
     height: 4px;
     background: black;
     transition: all 0.1s ease-in-out;
+    background: var(--color-text);
   }
 `
 
