@@ -4,6 +4,9 @@ export const Container = styled.div`
   height: 100vh;
   width: 600px;
   overflow-y: hidden;
+  @media (max-width: 800px) {
+    width: 300px;
+  }
 `
 
 export const Box = styled.div`
@@ -16,6 +19,10 @@ export const Box = styled.div`
   margin-bottom: 6rem;
   justify-content: center;
   align-items: center;
+  @media (max-width: 800px) {
+    width: 300px;
+    height: 400px;
+  }
 `
 
 export const Flex = styled(Box)`

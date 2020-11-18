@@ -10,6 +10,9 @@ const ProjectsSection = styled.div`
   justify-content: flex-end;
   align-items: center;
   overflow-y: hidden;
+  @media (max-width: 800px) {
+    justify-content: center;
+  }
 `
 export const DragMe = styled.h1`
   transform: rotate(90deg);
@@ -31,6 +34,9 @@ export const DragMe = styled.h1`
     position: absolute;
     top: 50%;
     margin-left: 1rem;
+  }
+  @media (max-width: 800px) {
+    display: none;
   }
 `
 

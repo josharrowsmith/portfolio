@@ -8,7 +8,7 @@ import Typography from '../styles/Typography'
 
 const ContentStyles = styled.div`
   padding: 4rem;
-  height: 100vh;
+  /* height: 100vh; */
 `
 const Cursor = styled(motion.div)`
   position: fixed;

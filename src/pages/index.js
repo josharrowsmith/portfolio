@@ -8,10 +8,9 @@ const HomePageGrid = styled.div`
   display: grid;
   gap: 2rem;
   justify-items: center;
-  --columns: 2;
   grid-template-columns: 60% 40%;
   @media (max-width: 800px) {
-    --columns: 1;
+    grid-template-columns: 1fr;
   }
 `
 

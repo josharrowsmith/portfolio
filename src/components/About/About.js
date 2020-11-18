@@ -8,14 +8,15 @@ import Scroll from '../../assets/images/hire.svg'
 const AboutMeGrid = styled.div`
   display: grid;
   grid-template-columns: 30% 70%;
-  --columns: 2;
   justify-items: center;
+  @media (max-width: 800px) {
+    grid-template-columns: 1fr;
+  }
 `
 
 const AboutSection = styled.div`
   display: grid;
   grid-template-columns: 15% 1fr;
-  --columns: 2;
   align-items: center;
   h1 {
     writing-mode: vertical-rl;
@@ -23,12 +24,23 @@ const AboutSection = styled.div`
     justify-self: center;
     font-size: 7rem;
   }
+  @media (max-width: 800px) {
+    grid-template-columns: 1fr;
+    grid-row-start: 1;
+    h1 {
+      writing-mode: horizontal-tb;
+      font-size: inherit;
+    }
+  }
 `
 const StyledScrollImage = styled(motion.img)`
   will-change: transform;
   width: 300px;
   height: 300px;
   margin-bottom: 2rem;
+  @media (max-width: 800px) {
+    display: none;
+  }
 `
 const ContactGrid = styled.div`
   display: flex;
