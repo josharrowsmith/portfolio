@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import { motion, useMotionValue, useSpring } from 'framer-motion'
+import { ThemeProvider } from '../context/ThemeProvider'
 import 'normalize.css'
 import GlobalStyles from '../styles/GlobalStyles'
 import Typography from '../styles/Typography'
 
 const ContentStyles = styled.div`
-  background: white;
   padding: 4rem;
   height: 100vh;
 `
@@ -47,7 +47,7 @@ export default function Layout({ children }) {
   */
 
   return (
-    <>
+    <ThemeProvider>
       <GlobalStyles />
       <Typography />
       <>
@@ -59,6 +59,6 @@ export default function Layout({ children }) {
           translateY: cursorYSpring,
         }}
       /> */}
-    </>
+    </ThemeProvider>
   )
 }

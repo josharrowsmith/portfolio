@@ -1,5 +1,19 @@
 import { createGlobalStyle } from 'styled-components'
 
+export const COLOR_MODE_KEY = 'color-mode'
+export const INITIAL_COLOR_MODE_CSS_PROP = '--initial-color-mode'
+
+export const COLORS = {
+  text: {
+    light: 'hsl(0deg, 0%, 10%)', // white
+    dark: 'hsl(0deg, 0%, 100%)', // near-black
+  },
+  background: {
+    light: 'hsl(0deg, 0%, 100%)', // white
+    dark: 'hsl(250deg, 70%, 7%)', // navy navy blue
+  },
+}
+
 const GlobalStyles = createGlobalStyle`
   :root {
     --red: #FF4949;
@@ -30,6 +44,8 @@ const GlobalStyles = createGlobalStyle`
 
   body {
     font-size: 2rem;
+    background: var(--color-background);
+    color: var(--color-text);
   }
 
   fieldset {
