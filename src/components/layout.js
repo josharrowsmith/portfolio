@@ -23,6 +23,7 @@ const Cursor = styled(motion.div)`
 `
 
 export default function Layout({ children }) {
+  /*
   const cursorX = useMotionValue(-100)
   const cursorY = useMotionValue(-100)
 
@@ -43,6 +44,7 @@ export default function Layout({ children }) {
       window.removeEventListener('mousemove', moveCursor)
     }
   }, [])
+  */
 
   return (
     <>
@@ -51,12 +53,12 @@ export default function Layout({ children }) {
       <>
         <ContentStyles>{children}</ContentStyles>
       </>
-      <Cursor
+      {/* <Cursor
         style={{
           translateX: cursorXSpring,
           translateY: cursorYSpring,
         }}
-      />
+      /> */}
     </>
   )
 }

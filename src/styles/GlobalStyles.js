@@ -26,7 +26,6 @@ const GlobalStyles = createGlobalStyle`
 
   *, *::before, *::after {
     box-sizing: border-box;
-    cursor: none;
   }
 
   body {

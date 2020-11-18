@@ -38,7 +38,7 @@ const Projects = () => (
   <ProjectsSection>
     <Container>
       <DragSlider>
-        {[...Array(10).keys()].map((item, key) => (
+        {[...Array(5).keys()].map((item, key) => (
           <FlexItem key={key} width={300}>
             <h1>hey man</h1>
           </FlexItem>
