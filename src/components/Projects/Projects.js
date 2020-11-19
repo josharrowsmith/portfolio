@@ -40,10 +40,13 @@ export const DragMe = styled.p`
     display: none;
   }
 `
-const StyledImage = styled(Img)`
-  width: 100%;
+const AssetContainer = styled.div`
+  display: flex;
+  flex-direction: column;
   height: 100%;
+  width: 100%;
 `
+const StyledImage = styled(Img)``
 
 const Projects = data => {
   console.log(data)
@@ -52,20 +55,49 @@ const Projects = data => {
       <Container>
         <DragSlider>
           <FlexItem width={300}>
-            <div>
-              <Img fixed={data.images.work.childImageSharp.fixed} />
+            <AssetContainer>
+              <StyledImage
+                fluid={data.images.skatePark.childImageSharp.fluid}
+                imgStyle={{
+                  objectFit: 'contain',
+                }}
+              />
               <p>projects name</p>
               <p>coding stuff</p>
               <p>links</p>
-            </div>
+            </AssetContainer>
           </FlexItem>
           <FlexItem width={300}>
-            <div>
-              <Img fixed={data.images.work.childImageSharp.fixed} />
+            <AssetContainer>
+              <StyledImage fluid={data.images.twitch.childImageSharp.fluid} />
               <p>projects name</p>
               <p>coding stuff</p>
               <p>links</p>
-            </div>
+            </AssetContainer>
+          </FlexItem>
+          <FlexItem width={300}>
+            <AssetContainer>
+              <StyledImage fluid={data.images.hangMan.childImageSharp.fluid} />
+              <p>projects name</p>
+              <p>coding stuff</p>
+              <p>links</p>
+            </AssetContainer>
+          </FlexItem>
+          <FlexItem width={300}>
+            <AssetContainer>
+              <StyledImage fluid={data.images.parks.childImageSharp.fluid} />
+              <p>projects name</p>
+              <p>coding stuff</p>
+              <p>links</p>
+            </AssetContainer>
+          </FlexItem>
+          <FlexItem width={300}>
+            <AssetContainer>
+              <StyledImage fluid={data.images.faceOff.childImageSharp.fluid} />
+              <p>projects name</p>
+              <p>coding stuff</p>
+              <p>links</p>
+            </AssetContainer>
           </FlexItem>
         </DragSlider>
       </Container>

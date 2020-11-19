@@ -26,10 +26,38 @@ function IndexPage({ data }) {
 
 export const query = graphql`
   query {
-    work: file(relativePath: { eq: "work.png" }) {
+    skatePark: file(relativePath: { eq: "skatePark.png" }) {
       childImageSharp {
-        fixed(width: 125, height: 125) {
-          ...GatsbyImageSharpFixed
+        fluid(maxWidth: 800) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    twitch: file(relativePath: { eq: "twitch.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 800) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    hangMan: file(relativePath: { eq: "hangMan.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 800) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    parks: file(relativePath: { eq: "parks.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 800) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    faceOff: file(relativePath: { eq: "faceOff.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 800) {
+          ...GatsbyImageSharpFluid
         }
       }
     }
