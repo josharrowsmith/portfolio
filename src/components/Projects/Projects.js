@@ -1,5 +1,4 @@
 import React from 'react'
-import { StaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
 import { DragSlider } from '../Slider/DragSlider'
@@ -52,15 +51,22 @@ const Projects = data => {
     <ProjectsSection>
       <Container>
         <DragSlider>
-          {[...Array(5).keys()].map((item, key) => (
-            <FlexItem key={key} width={300}>
-              <div>
-                <p>projects name</p>
-                <p>coding stuff</p>
-                <p>links</p>
-              </div>
-            </FlexItem>
-          ))}
+          <FlexItem width={300}>
+            <div>
+              <Img fixed={data.images.work.childImageSharp.fixed} />
+              <p>projects name</p>
+              <p>coding stuff</p>
+              <p>links</p>
+            </div>
+          </FlexItem>
+          <FlexItem width={300}>
+            <div>
+              <Img fixed={data.images.work.childImageSharp.fixed} />
+              <p>projects name</p>
+              <p>coding stuff</p>
+              <p>links</p>
+            </div>
+          </FlexItem>
         </DragSlider>
       </Container>
       <DragMe>Drag Me</DragMe>

@@ -16,12 +16,10 @@ const HomePageGrid = styled.div`
 `
 
 function IndexPage({ data }) {
-  console.log(data.work)
   return (
     <HomePageGrid>
       <About />
-      <Img fixed={data.work.childImageSharp.fixed} />
-      {/* <Projects /> */}
+      <Projects images={data} />
     </HomePageGrid>
   )
 }
