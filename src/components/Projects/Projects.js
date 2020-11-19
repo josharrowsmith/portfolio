@@ -55,7 +55,6 @@ const Projects = data => {
           {[...Array(5).keys()].map((item, key) => (
             <FlexItem key={key} width={300}>
               <div>
-                <Img fixed={data.file.childImageSharp.fixed} />
                 <p>projects name</p>
                 <p>coding stuff</p>
                 <p>links</p>
@@ -69,15 +68,4 @@ const Projects = data => {
   )
 }
 
-export const query = graphql`
-  query {
-    file(relativePath: { eq: "work.png" }) {
-      childImageSharp {
-        fixed(width: 125, height: 125) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-  }
-`
 export default Projects

@@ -1,6 +1,7 @@
 import React from 'react'
+import { graphql } from 'gatsby'
 import styled from 'styled-components'
-import Layout from '../components/layout'
+import Img from 'gatsby-image'
 import About from '../components/About/About'
 import Projects from '../components/Projects/Projects'
 
@@ -14,13 +15,27 @@ const HomePageGrid = styled.div`
   }
 `
 
-function IndexPage() {
+function IndexPage({ data }) {
+  console.log(data.work)
   return (
     <HomePageGrid>
       <About />
-      <Projects />
+      <Img fixed={data.work.childImageSharp.fixed} />
+      {/* <Projects /> */}
     </HomePageGrid>
   )
 }
+
+export const query = graphql`
+  query {
+    work: file(relativePath: { eq: "work.png" }) {
+      childImageSharp {
+        fixed(width: 125, height: 125) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+  }
+`
 
 export default IndexPage
