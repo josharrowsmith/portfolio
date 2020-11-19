@@ -5,6 +5,7 @@ import { ThemeProvider } from '../context/ThemeProvider'
 import 'normalize.css'
 import GlobalStyles from '../styles/GlobalStyles'
 import Typography from '../styles/Typography'
+import Nav from './Nav'
 
 const ContentStyles = styled.div`
   padding: 4rem;

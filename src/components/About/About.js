@@ -42,6 +42,7 @@ const StyledScrollImage = styled(motion.img)`
     display: none;
   }
 `
+
 const ContactGrid = styled.div`
   display: flex;
   flex-direction: row;

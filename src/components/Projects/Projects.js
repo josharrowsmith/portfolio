@@ -1,5 +1,7 @@
 import React from 'react'
+import { StaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
+import Img from 'gatsby-image'
 import { DragSlider } from '../Slider/DragSlider'
 import { Container, FlexItem } from '../Slider/Box'
 
@@ -14,7 +16,7 @@ const ProjectsSection = styled.div`
     justify-content: center;
   }
 `
-export const DragMe = styled.h1`
+export const DragMe = styled.p`
   transform: rotate(90deg);
   &:before {
     content: '';
@@ -39,20 +41,43 @@ export const DragMe = styled.h1`
     display: none;
   }
 `
+const StyledImage = styled(Img)`
+  width: 100%;
+  height: 100%;
+`
 
-const Projects = () => (
-  <ProjectsSection>
-    <Container>
-      <DragSlider>
-        {[...Array(5).keys()].map((item, key) => (
-          <FlexItem key={key} width={300}>
-            <h1>hey man</h1>
-          </FlexItem>
-        ))}
-      </DragSlider>
-    </Container>
-    <DragMe>Drag Me</DragMe>
-  </ProjectsSection>
-)
+const Projects = data => {
+  console.log(data)
+  return (
+    <ProjectsSection>
+      <Container>
+        <DragSlider>
+          {[...Array(5).keys()].map((item, key) => (
+            <FlexItem key={key} width={300}>
+              <div>
+                <Img fixed={data.file.childImageSharp.fixed} />
+                <p>projects name</p>
+                <p>coding stuff</p>
+                <p>links</p>
+              </div>
+            </FlexItem>
+          ))}
+        </DragSlider>
+      </Container>
+      <DragMe>Drag Me</DragMe>
+    </ProjectsSection>
+  )
+}
 
+export const query = graphql`
+  query {
+    file(relativePath: { eq: "work.png" }) {
+      childImageSharp {
+        fixed(width: 125, height: 125) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+  }
+`
 export default Projects
