@@ -11,12 +11,11 @@ export const Container = styled.div`
 
 export const Box = styled.div`
   width: 600px;
-  background-color: #2d2dff;
   height: 600px;
   font-size: 72px;
   font-weight: 700;
-  color: #e6e6e6;
-  margin-bottom: 6rem;
+  color: black;
+  margin-bottom: 1rem;
   justify-content: center;
   align-items: center;
   @media (max-width: 800px) {

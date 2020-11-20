@@ -43,10 +43,50 @@ export const DragMe = styled.p`
 const AssetContainer = styled.div`
   display: flex;
   flex-direction: column;
-  height: 100%;
+  padding: 2rem;
   width: 100%;
+  border: black 5px solid;
 `
-const StyledImage = styled(Img)``
+const StyledImage = styled(Img)`
+  width: 100%;
+  height: 100%;
+`
+
+const ProjectContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+`
+
+const ProjectName = styled.p`
+  align-self: center;
+  margin-bottom: 0;
+`
+const Description = styled.p`
+  text-align: center;
+  margin: 0;
+`
+const Links = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+  p {
+    margin: 0;
+  }
+`
+const Languages = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+  p {
+    margin: 0;
+  }
+`
 
 const Projects = data => {
   console.log(data)
@@ -62,39 +102,69 @@ const Projects = data => {
                   objectFit: 'contain',
                 }}
               />
-              <p>projects name</p>
+              <ProjectContainer>
+                <ProjectName>SOTI Skatepark App</ProjectName>
+                <Description>Find skateparks near you</Description>
+                <Links>
+                  <p>github</p>
+                  <p>store</p>
+                </Links>
+                <Languages>
+                  <p>html</p>
+                  <p>javascipt</p>
+                  <p>code</p>
+                </Languages>
+              </ProjectContainer>
+            </AssetContainer>
+          </FlexItem>
+          <FlexItem width={300}>
+            <AssetContainer>
+              <StyledImage
+                fluid={data.images.twitch.childImageSharp.fluid}
+                imgStyle={{
+                  objectFit: 'contain',
+                }}
+              />
+              <ProjectName>Destiny 2 Twitch extension</ProjectName>
               <p>coding stuff</p>
               <p>links</p>
             </AssetContainer>
           </FlexItem>
           <FlexItem width={300}>
             <AssetContainer>
-              <StyledImage fluid={data.images.twitch.childImageSharp.fluid} />
-              <p>projects name</p>
+              <StyledImage
+                fluid={data.images.hangMan.childImageSharp.fluid}
+                imgStyle={{
+                  objectFit: 'contain',
+                }}
+              />
+              <ProjectName>Hang Man</ProjectName>
               <p>coding stuff</p>
               <p>links</p>
             </AssetContainer>
           </FlexItem>
           <FlexItem width={300}>
             <AssetContainer>
-              <StyledImage fluid={data.images.hangMan.childImageSharp.fluid} />
-              <p>projects name</p>
+              <StyledImage
+                fluid={data.images.parks.childImageSharp.fluid}
+                imgStyle={{
+                  objectFit: 'contain',
+                }}
+              />
+              <ProjectName>Parks</ProjectName>
               <p>coding stuff</p>
               <p>links</p>
             </AssetContainer>
           </FlexItem>
           <FlexItem width={300}>
             <AssetContainer>
-              <StyledImage fluid={data.images.parks.childImageSharp.fluid} />
-              <p>projects name</p>
-              <p>coding stuff</p>
-              <p>links</p>
-            </AssetContainer>
-          </FlexItem>
-          <FlexItem width={300}>
-            <AssetContainer>
-              <StyledImage fluid={data.images.faceOff.childImageSharp.fluid} />
-              <p>projects name</p>
+              <StyledImage
+                fluid={data.images.faceOff.childImageSharp.fluid}
+                imgStyle={{
+                  objectFit: 'contain',
+                }}
+              />
+              <ProjectName>FaceOff</ProjectName>
               <p>coding stuff</p>
               <p>links</p>
             </AssetContainer>
