@@ -45,7 +45,6 @@ const AssetContainer = styled.div`
   flex-direction: column;
   padding: 2rem;
   width: 100%;
-  border: black 5px solid;
 `
 const StyledImage = styled(Img)`
   width: 100%;
@@ -125,9 +124,19 @@ const Projects = data => {
                   objectFit: 'contain',
                 }}
               />
-              <ProjectName>Destiny 2 Twitch extension</ProjectName>
-              <p>coding stuff</p>
-              <p>links</p>
+              <ProjectContainer>
+                <ProjectName>SOTI Skatepark App</ProjectName>
+                <Description>Find skateparks near you</Description>
+                <Links>
+                  <p>github</p>
+                  <p>store</p>
+                </Links>
+                <Languages>
+                  <p>html</p>
+                  <p>javascipt</p>
+                  <p>code</p>
+                </Languages>
+              </ProjectContainer>
             </AssetContainer>
           </FlexItem>
           <FlexItem width={300}>
@@ -138,9 +147,19 @@ const Projects = data => {
                   objectFit: 'contain',
                 }}
               />
-              <ProjectName>Hang Man</ProjectName>
-              <p>coding stuff</p>
-              <p>links</p>
+              <ProjectContainer>
+                <ProjectName>SOTI Skatepark App</ProjectName>
+                <Description>Find skateparks near you</Description>
+                <Links>
+                  <p>github</p>
+                  <p>store</p>
+                </Links>
+                <Languages>
+                  <p>html</p>
+                  <p>javascipt</p>
+                  <p>code</p>
+                </Languages>
+              </ProjectContainer>
             </AssetContainer>
           </FlexItem>
           <FlexItem width={300}>
@@ -151,9 +170,19 @@ const Projects = data => {
                   objectFit: 'contain',
                 }}
               />
-              <ProjectName>Parks</ProjectName>
-              <p>coding stuff</p>
-              <p>links</p>
+              <ProjectContainer>
+                <ProjectName>SOTI Skatepark App</ProjectName>
+                <Description>Find skateparks near you</Description>
+                <Links>
+                  <p>github</p>
+                  <p>store</p>
+                </Links>
+                <Languages>
+                  <p>html</p>
+                  <p>javascipt</p>
+                  <p>code</p>
+                </Languages>
+              </ProjectContainer>
             </AssetContainer>
           </FlexItem>
           <FlexItem width={300}>
@@ -161,12 +190,22 @@ const Projects = data => {
               <StyledImage
                 fluid={data.images.faceOff.childImageSharp.fluid}
                 imgStyle={{
-                  objectFit: 'contain',
+                  objectFit: 'cover',
                 }}
               />
-              <ProjectName>FaceOff</ProjectName>
-              <p>coding stuff</p>
-              <p>links</p>
+              <ProjectContainer>
+                <ProjectName>SOTI Skatepark App</ProjectName>
+                <Description>Find skateparks near you</Description>
+                <Links>
+                  <p>github</p>
+                  <p>store</p>
+                </Links>
+                <Languages>
+                  <p>html</p>
+                  <p>javascipt</p>
+                  <p>code</p>
+                </Languages>
+              </ProjectContainer>
             </AssetContainer>
           </FlexItem>
         </DragSlider>

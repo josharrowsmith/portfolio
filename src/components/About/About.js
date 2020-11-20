@@ -38,6 +38,7 @@ const StyledScrollImage = styled(motion.img)`
   width: 300px;
   height: 300px;
   margin-bottom: 2rem;
+  filter: var(--color-logo);
   @media (max-width: 800px) {
     display: none;
   }

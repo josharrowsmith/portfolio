@@ -12,6 +12,10 @@ export const COLORS = {
     light: '#fff',
     dark: '#000',
   },
+  logo: {
+    light: 'invert(0%)',
+    dark: 'invert(100%)',
+  },
 }
 
 const GlobalStyles = createGlobalStyle`
@@ -44,6 +48,7 @@ const GlobalStyles = createGlobalStyle`
 
   body {
     font-size: 2rem;
+    height: 100vh;
     background: var(--color-background);
     color: var(--color-text);
   }
@@ -76,19 +81,19 @@ const GlobalStyles = createGlobalStyle`
 
   /* Scrollbar Styles */
   body::-webkit-scrollbar {
-    width: 12px;
+    width: 30px;
   }
   html {
     scrollbar-width: thin;
-    scrollbar-color: var(----blue) var(--white);
+    scrollbar-color: var(--color-text) var(--color-background);
   }
   body::-webkit-scrollbar-track {
-    background: var(--white);
+    background: var(--color-background);
   }
   body::-webkit-scrollbar-thumb {
-    background-color: var(--blue) ;
-    border-radius: 6px;
-    border: 3px solid var(--white);
+    background-color: var(--color-text) ;
+    border-radius: 15px;
+    border: 3px solid var(--color-text);
   }
 
   img {
