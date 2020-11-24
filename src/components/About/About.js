@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 import { Accordion } from './Accordion'
-import DarkToggle from '../Toggle/DarkToggle'
 import Scroll from '../../assets/images/hire.svg'
 
 const AboutMeGrid = styled.div`
@@ -66,7 +65,6 @@ const About = () => (
         <p>email</p>
         <p>twiiter</p>
       </ContactGrid>
-      <DarkToggle />
     </div>
     <AboutSection>
       <h1>Josh Arrowsmith</h1>

@@ -13,6 +13,8 @@ const ProjectsSection = styled.div`
   overflow-y: hidden;
   @media (max-width: 800px) {
     justify-content: center;
+    height: auto;
+    overflow-y: scroll;
   }
 `
 export const DragMe = styled.p`

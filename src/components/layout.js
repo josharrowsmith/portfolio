@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { motion, useMotionValue, useSpring } from 'framer-motion'
+import useMousePosition from './hooks/useMousePosition'
 import { ThemeProvider } from '../context/ThemeProvider'
 import 'normalize.css'
 import GlobalStyles from '../styles/GlobalStyles'
@@ -8,58 +9,45 @@ import Typography from '../styles/Typography'
 import Nav from './Nav'
 
 const ContentStyles = styled.div`
-  padding: 4rem;
+  padding: 2rem 4rem 4rem 4rem;
   /* height: 100vh; */
 `
 const Cursor = styled(motion.div)`
-  position: fixed;
-  left: 0;
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  z-index: 10;
   top: 0;
-  width: 32px;
-  height: 32px;
-  border-radius: 16px;
-  background-color: #000;
-  z-index: 999;
+  background: var(--color-text);
+  border-radius: 100%;
   pointer-events: none;
 `
 
 export default function Layout({ children }) {
-  /*
-  const cursorX = useMotionValue(-100)
-  const cursorY = useMotionValue(-100)
-
-  const springConfig = { damping: 25, stiffness: 700 }
-  const cursorXSpring = useSpring(cursorX, springConfig)
-  const cursorYSpring = useSpring(cursorY, springConfig)
-
-  useEffect(() => {
-    const moveCursor = e => {
-      cursorX.set(e.clientX - 16)
-      cursorY.set(e.clientY - 16)
-    }
-
-    console.log(window.addEventListener('touchmove', moveCursor))
-    window.addEventListener('mousemove', moveCursor)
-
-    return () => {
-      window.removeEventListener('mousemove', moveCursor)
-    }
-  }, [])
-  */
+  const [cursorHovered, setCursorHovered] = useState(false)
+  const { x, y } = useMousePosition()
 
   return (
     <ThemeProvider>
       <GlobalStyles />
       <Typography />
       <>
+        <Nav setCursorHovered={setCursorHovered} x={x} y={y} />
         <ContentStyles>{children}</ContentStyles>
       </>
-      {/* <Cursor
-        style={{
-          translateX: cursorXSpring,
-          translateY: cursorYSpring,
+      <Cursor
+        animate={{
+          x: x - 16,
+          y: y - 16,
+          scale: cursorHovered ? 1.2 : 1,
+          opacity: cursorHovered ? 0.8 : 0,
         }}
-      /> */}
+        transition={{
+          ease: 'linear',
+          duration: 0.2,
+        }}
+      />
     </ThemeProvider>
   )
 }
