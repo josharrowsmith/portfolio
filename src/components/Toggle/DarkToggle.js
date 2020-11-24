@@ -12,6 +12,7 @@ const DarkToggle = () => {
     <label>
       <input
         type="checkbox"
+        style={{ marginRight: '1rem' }}
         checked={colorMode === 'dark'}
         onChange={ev => {
           setColorMode(ev.target.checked ? 'dark' : 'light')

@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Img from 'gatsby-image'
 import { DragSlider } from '../Slider/DragSlider'
 import { Container, FlexItem } from '../Slider/Box'
+import { ProjectData } from '../../assets/data/data'
 
 const ProjectsSection = styled.div`
   display: flex;
@@ -17,7 +18,7 @@ const ProjectsSection = styled.div`
     overflow-y: scroll;
   }
 `
-export const DragMe = styled.p`
+const DragMe = styled.p`
   transform: rotate(90deg);
   &:before {
     content: '';
@@ -90,126 +91,39 @@ const Languages = styled.div`
 `
 
 const Projects = data => {
-  console.log(data)
+  console.log(ProjectData)
   return (
     <ProjectsSection>
       <Container>
         <DragSlider>
-          <FlexItem width={300}>
-            <AssetContainer>
-              <StyledImage
-                fluid={data.images.skatePark.childImageSharp.fluid}
-                imgStyle={{
-                  objectFit: 'contain',
-                }}
-              />
-              <ProjectContainer>
-                <ProjectName>SOTI Skatepark App</ProjectName>
-                <Description>Find skateparks near you</Description>
-                <Links>
-                  <p>github</p>
-                  <p>store</p>
-                </Links>
-                <Languages>
-                  <p>html</p>
-                  <p>javascipt</p>
-                  <p>code</p>
-                </Languages>
-              </ProjectContainer>
-            </AssetContainer>
-          </FlexItem>
-          <FlexItem width={300}>
-            <AssetContainer>
-              <StyledImage
-                fluid={data.images.twitch.childImageSharp.fluid}
-                imgStyle={{
-                  objectFit: 'contain',
-                }}
-              />
-              <ProjectContainer>
-                <ProjectName>SOTI Skatepark App</ProjectName>
-                <Description>Find skateparks near you</Description>
-                <Links>
-                  <p>github</p>
-                  <p>store</p>
-                </Links>
-                <Languages>
-                  <p>html</p>
-                  <p>javascipt</p>
-                  <p>code</p>
-                </Languages>
-              </ProjectContainer>
-            </AssetContainer>
-          </FlexItem>
-          <FlexItem width={300}>
-            <AssetContainer>
-              <StyledImage
-                fluid={data.images.hangMan.childImageSharp.fluid}
-                imgStyle={{
-                  objectFit: 'contain',
-                }}
-              />
-              <ProjectContainer>
-                <ProjectName>SOTI Skatepark App</ProjectName>
-                <Description>Find skateparks near you</Description>
-                <Links>
-                  <p>github</p>
-                  <p>store</p>
-                </Links>
-                <Languages>
-                  <p>html</p>
-                  <p>javascipt</p>
-                  <p>code</p>
-                </Languages>
-              </ProjectContainer>
-            </AssetContainer>
-          </FlexItem>
-          <FlexItem width={300}>
-            <AssetContainer>
-              <StyledImage
-                fluid={data.images.parks.childImageSharp.fluid}
-                imgStyle={{
-                  objectFit: 'contain',
-                }}
-              />
-              <ProjectContainer>
-                <ProjectName>SOTI Skatepark App</ProjectName>
-                <Description>Find skateparks near you</Description>
-                <Links>
-                  <p>github</p>
-                  <p>store</p>
-                </Links>
-                <Languages>
-                  <p>html</p>
-                  <p>javascipt</p>
-                  <p>code</p>
-                </Languages>
-              </ProjectContainer>
-            </AssetContainer>
-          </FlexItem>
-          <FlexItem width={300}>
-            <AssetContainer>
-              <StyledImage
-                fluid={data.images.faceOff.childImageSharp.fluid}
-                imgStyle={{
-                  objectFit: 'cover',
-                }}
-              />
-              <ProjectContainer>
-                <ProjectName>SOTI Skatepark App</ProjectName>
-                <Description>Find skateparks near you</Description>
-                <Links>
-                  <p>github</p>
-                  <p>store</p>
-                </Links>
-                <Languages>
-                  <p>html</p>
-                  <p>javascipt</p>
-                  <p>code</p>
-                </Languages>
-              </ProjectContainer>
-            </AssetContainer>
-          </FlexItem>
+          {ProjectData.map((project, i) => {
+            console.log(project.img)
+            return (
+              <FlexItem>
+                <AssetContainer>
+                  <StyledImage
+                    fluid={data.images.skatePark.childImageSharp.fluid}
+                    imgStyle={{
+                      objectFit: 'contain',
+                    }}
+                  />
+                  <ProjectContainer>
+                    <ProjectName>{project.name}</ProjectName>
+                    <Description>{project.descrption}</Description>
+                    <Links>
+                      <p>github</p>
+                      <p>store</p>
+                    </Links>
+                    <Languages>
+                      <p>html</p>
+                      <p>javascipt</p>
+                      <p>code</p>
+                    </Languages>
+                  </ProjectContainer>
+                </AssetContainer>
+              </FlexItem>
+            )
+          })}
         </DragSlider>
       </Container>
       <DragMe>Drag Me</DragMe>
