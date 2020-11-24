@@ -97,16 +97,27 @@ const Projects = data => {
       <Container>
         <DragSlider>
           {ProjectData.map((project, i) => {
-            console.log(project.img)
+            const skatePark = data.images.skatePark.childImageSharp.fluid
+            const twitch = data.images.twitch.childImageSharp.fluid
             return (
               <FlexItem>
                 <AssetContainer>
-                  <StyledImage
-                    fluid={data.images.skatePark.childImageSharp.fluid}
-                    imgStyle={{
-                      objectFit: 'contain',
-                    }}
-                  />
+                  {i === 0 && (
+                    <StyledImage
+                      fluid={skatePark}
+                      imgStyle={{
+                        objectFit: 'contain',
+                      }}
+                    />
+                  )}
+                  {i === 1 && (
+                    <StyledImage
+                      fluid={twitch}
+                      imgStyle={{
+                        objectFit: 'contain',
+                      }}
+                    />
+                  )}
                   <ProjectContainer>
                     <ProjectName>{project.name}</ProjectName>
                     <Description>{project.descrption}</Description>
