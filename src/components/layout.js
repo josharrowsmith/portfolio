@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
-import { motion, useMotionValue, useSpring } from 'framer-motion'
+import { motion } from 'framer-motion'
+import { useWindowSize } from 'react-use'
 import useMousePosition from './hooks/useMousePosition'
 import { ThemeProvider } from '../context/ThemeProvider'
 import 'normalize.css'
@@ -24,30 +25,57 @@ const Cursor = styled(motion.div)`
   pointer-events: none;
 `
 
+const Parent = props => {
+  const { children } = props
+
+  const childrenWithExtraProp = React.Children.map(children, child =>
+    React.cloneElement(child, { propsToPass: 'toChildren' })
+  )
+
+  return <div>{childrenWithExtraProp}</div>
+}
+
 export default function Layout({ children }) {
   const [cursorHovered, setCursorHovered] = useState(false)
   const { x, y } = useMousePosition()
+  const { height } = useWindowSize()
 
   return (
     <ThemeProvider>
-      <GlobalStyles />
-      <Typography />
-      <>
-        <Nav setCursorHovered={setCursorHovered} x={x} y={y} />
-        <ContentStyles>{children}</ContentStyles>
-      </>
-      <Cursor
-        animate={{
-          x: x - 16,
-          y: y - 16,
-          scale: cursorHovered ? 1.2 : 1,
-          opacity: cursorHovered ? 0.8 : 0,
-        }}
-        transition={{
-          ease: 'linear',
-          duration: 0.2,
-        }}
-      />
+      {height < 830 ? (
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            height: '100vh',
+          }}
+        >
+          <h1>Its not ready</h1>
+        </div>
+      ) : (
+        <>
+          <GlobalStyles />
+          <Typography />
+          <>
+            <Nav setCursorHovered={setCursorHovered} x={x} y={y} />
+            <Parent>{children}</Parent>
+          </>
+          <Cursor
+            initial={{ x: -100 }}
+            animate={{
+              x: x - 16,
+              y: y - 16,
+              scale: cursorHovered ? 1.2 : 1,
+              opacity: cursorHovered ? 0.8 : 0,
+            }}
+            transition={{
+              ease: 'linear',
+              duration: 0.2,
+            }}
+          />
+        </>
+      )}
     </ThemeProvider>
   )
 }

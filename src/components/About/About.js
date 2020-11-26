@@ -23,6 +23,9 @@ const AboutSection = styled.div`
     justify-self: center;
     font-size: 7rem;
   }
+  span {
+    text-decoration: underline;
+  }
   @media (max-width: 800px) {
     grid-template-columns: 1fr;
     grid-row-start: 1;
@@ -50,7 +53,7 @@ const ContactGrid = styled.div`
   justify-content: center;
 `
 
-const About = () => (
+const About = ({ setCursorHovered }) => (
   <AboutMeGrid>
     <div>
       <StyledScrollImage
@@ -72,8 +75,14 @@ const About = () => (
         I'm a software engineer. I specialize in Front-end development which is
         building out the visual components of a website. I build interactive,
         responsive and beautiful websites through carefully crafted code and
-        user-centric design. I work with technologies like HTML5, CSS3 and
-        Javascript. I'm currently a freelancer and available to work.
+        user-centric design. I work with technologies like
+        <motion.span
+          onMouseEnter={() => setCursorHovered(true)}
+          onMouseLeave={() => setCursorHovered(false)}
+        >
+          React Native
+        </motion.span>
+        , CSS3 and Javascript. I'm currently a freelancer and available to work.
       </p>
     </AboutSection>
   </AboutMeGrid>

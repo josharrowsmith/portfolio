@@ -91,7 +91,7 @@ const Languages = styled.div`
 `
 
 const Projects = data => {
-  console.log(ProjectData)
+  console.log('nothing')
   return (
     <ProjectsSection>
       <Container>
@@ -99,8 +99,11 @@ const Projects = data => {
           {ProjectData.map((project, i) => {
             const skatePark = data.images.skatePark.childImageSharp.fluid
             const twitch = data.images.twitch.childImageSharp.fluid
+            const HangMan = data.images.hangMan.childImageSharp.fluid
+            const Parks = data.images.parks.childImageSharp.fluid
+            const FaceOff = data.images.faceOff.childImageSharp.fluid
             return (
-              <FlexItem>
+              <FlexItem key={project.id}>
                 <AssetContainer>
                   {i === 0 && (
                     <StyledImage
@@ -113,6 +116,30 @@ const Projects = data => {
                   {i === 1 && (
                     <StyledImage
                       fluid={twitch}
+                      imgStyle={{
+                        objectFit: 'contain',
+                      }}
+                    />
+                  )}
+                  {i === 2 && (
+                    <StyledImage
+                      fluid={HangMan}
+                      imgStyle={{
+                        objectFit: 'contain',
+                      }}
+                    />
+                  )}
+                  {i === 3 && (
+                    <StyledImage
+                      fluid={Parks}
+                      imgStyle={{
+                        objectFit: 'contain',
+                      }}
+                    />
+                  )}
+                  {i === 4 && (
+                    <StyledImage
+                      fluid={FaceOff}
                       imgStyle={{
                         objectFit: 'contain',
                       }}
