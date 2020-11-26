@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, cloneElement } from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 import { useWindowSize } from 'react-use'
@@ -25,16 +25,6 @@ const Cursor = styled(motion.div)`
   pointer-events: none;
 `
 
-const Parent = props => {
-  const { children } = props
-
-  const childrenWithExtraProp = React.Children.map(children, child =>
-    React.cloneElement(child, { propsToPass: 'toChildren' })
-  )
-
-  return <div>{childrenWithExtraProp}</div>
-}
-
 export default function Layout({ children }) {
   const [cursorHovered, setCursorHovered] = useState(false)
   const { x, y } = useMousePosition()
@@ -59,7 +49,11 @@ export default function Layout({ children }) {
           <Typography />
           <>
             <Nav setCursorHovered={setCursorHovered} x={x} y={y} />
-            <Parent>{children}</Parent>
+            <ContentStyles>
+              {cloneElement(children, {
+                setCursorHovered,
+              })}
+            </ContentStyles>
           </>
           <Cursor
             initial={{ x: -100 }}

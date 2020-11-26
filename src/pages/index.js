@@ -14,8 +14,8 @@ const HomePageGrid = styled.div`
   }
 `
 
-function IndexPage({ data, propsToPass }) {
-  console.log(propsToPass)
+function IndexPage({ data }) {
+  console.log(data)
   return (
     <HomePageGrid>
       <About />

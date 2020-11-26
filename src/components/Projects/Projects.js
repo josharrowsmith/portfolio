@@ -90,83 +90,80 @@ const Languages = styled.div`
   }
 `
 
-const Projects = data => {
-  console.log('nothing')
-  return (
-    <ProjectsSection>
-      <Container>
-        <DragSlider>
-          {ProjectData.map((project, i) => {
-            const skatePark = data.images.skatePark.childImageSharp.fluid
-            const twitch = data.images.twitch.childImageSharp.fluid
-            const HangMan = data.images.hangMan.childImageSharp.fluid
-            const Parks = data.images.parks.childImageSharp.fluid
-            const FaceOff = data.images.faceOff.childImageSharp.fluid
-            return (
-              <FlexItem key={project.id}>
-                <AssetContainer>
-                  {i === 0 && (
-                    <StyledImage
-                      fluid={skatePark}
-                      imgStyle={{
-                        objectFit: 'contain',
-                      }}
-                    />
-                  )}
-                  {i === 1 && (
-                    <StyledImage
-                      fluid={twitch}
-                      imgStyle={{
-                        objectFit: 'contain',
-                      }}
-                    />
-                  )}
-                  {i === 2 && (
-                    <StyledImage
-                      fluid={HangMan}
-                      imgStyle={{
-                        objectFit: 'contain',
-                      }}
-                    />
-                  )}
-                  {i === 3 && (
-                    <StyledImage
-                      fluid={Parks}
-                      imgStyle={{
-                        objectFit: 'contain',
-                      }}
-                    />
-                  )}
-                  {i === 4 && (
-                    <StyledImage
-                      fluid={FaceOff}
-                      imgStyle={{
-                        objectFit: 'contain',
-                      }}
-                    />
-                  )}
-                  <ProjectContainer>
-                    <ProjectName>{project.name}</ProjectName>
-                    <Description>{project.descrption}</Description>
-                    <Links>
-                      <p>github</p>
-                      <p>store</p>
-                    </Links>
-                    <Languages>
-                      <p>html</p>
-                      <p>javascipt</p>
-                      <p>code</p>
-                    </Languages>
-                  </ProjectContainer>
-                </AssetContainer>
-              </FlexItem>
-            )
-          })}
-        </DragSlider>
-      </Container>
-      <DragMe>Drag Me</DragMe>
-    </ProjectsSection>
-  )
-}
+const Projects = data => (
+  <ProjectsSection>
+    <Container>
+      <DragSlider>
+        {ProjectData.map((project, i) => {
+          const skatePark = data.images.skatePark.childImageSharp.fluid
+          const twitch = data.images.twitch.childImageSharp.fluid
+          const HangMan = data.images.hangMan.childImageSharp.fluid
+          const Parks = data.images.parks.childImageSharp.fluid
+          const FaceOff = data.images.faceOff.childImageSharp.fluid
+          return (
+            <FlexItem key={project.id}>
+              <AssetContainer>
+                {i === 0 && (
+                  <StyledImage
+                    fluid={skatePark}
+                    imgStyle={{
+                      objectFit: 'contain',
+                    }}
+                  />
+                )}
+                {i === 1 && (
+                  <StyledImage
+                    fluid={twitch}
+                    imgStyle={{
+                      objectFit: 'contain',
+                    }}
+                  />
+                )}
+                {i === 2 && (
+                  <StyledImage
+                    fluid={HangMan}
+                    imgStyle={{
+                      objectFit: 'contain',
+                    }}
+                  />
+                )}
+                {i === 3 && (
+                  <StyledImage
+                    fluid={Parks}
+                    imgStyle={{
+                      objectFit: 'contain',
+                    }}
+                  />
+                )}
+                {i === 4 && (
+                  <StyledImage
+                    fluid={FaceOff}
+                    imgStyle={{
+                      objectFit: 'contain',
+                    }}
+                  />
+                )}
+                <ProjectContainer>
+                  <ProjectName>{project.name}</ProjectName>
+                  <Description>{project.descrption}</Description>
+                  <Links>
+                    <p>github</p>
+                    <p>store</p>
+                  </Links>
+                  <Languages>
+                    <p>html</p>
+                    <p>javascipt</p>
+                    <p>code</p>
+                  </Languages>
+                </ProjectContainer>
+              </AssetContainer>
+            </FlexItem>
+          )
+        })}
+      </DragSlider>
+    </Container>
+    <DragMe>Drag Me</DragMe>
+  </ProjectsSection>
+)
 
 export default Projects
