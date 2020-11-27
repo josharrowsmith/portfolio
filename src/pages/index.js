@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import { motion } from 'framer-motion'
 import styled from 'styled-components'
 import About from '../components/About/About'
 import Projects from '../components/Projects/Projects'
@@ -15,12 +16,13 @@ const HomePageGrid = styled.div`
 `
 
 function IndexPage({ data }) {
-  console.log(data)
   return (
-    <HomePageGrid>
-      <About />
-      <Projects images={data} />
-    </HomePageGrid>
+    <>
+      <HomePageGrid>
+        <About />
+        <Projects images={data} />
+      </HomePageGrid>
+    </>
   )
 }
 

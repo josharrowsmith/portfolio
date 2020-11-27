@@ -1,16 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
-import { useWindowSize } from 'react-use'
+import { useWindowSize, useMouse } from 'react-use'
 import useMousePosition from './hooks/useMousePosition'
 import { ThemeProvider } from '../context/ThemeProvider'
 import 'normalize.css'
 import GlobalStyles from '../styles/GlobalStyles'
 import Typography from '../styles/Typography'
 import Nav from './Nav'
-import About from './About/About'
-import Projects from './Projects/Projects'
-import { query } from '../pages/index'
 
 const ContentStyles = styled.div`
   padding: 2rem 4rem 4rem 4rem;
@@ -30,7 +27,8 @@ const Cursor = styled(motion.div)`
 
 export default function Layout({ children, data }) {
   const [cursorHovered, setCursorHovered] = useState(false)
-  const { x, y } = useMousePosition()
+  const ref = useRef(null)
+  const { docX, docY } = useMouse(ref)
   const { height } = useWindowSize()
 
   return (
@@ -51,16 +49,14 @@ export default function Layout({ children, data }) {
           <GlobalStyles />
           <Typography />
           <>
-            <Nav setCursorHovered={setCursorHovered} x={x} y={y} />
-            {/* <ContentStyles>{children}</ContentStyles> */}
-            <About setCursorHovered={setCursorHovered} x={x} y={y} />
-            <Projects data={data} />
+            <Nav setCursorHovered={setCursorHovered} />
+            <ContentStyles>{children}</ContentStyles>
           </>
           <Cursor
             initial={{ x: -100 }}
             animate={{
-              x: x - 16,
-              y: y - 16,
+              x: -16,
+              y: docY - 16,
               scale: cursorHovered ? 1.2 : 1,
               opacity: cursorHovered ? 0.8 : 0,
             }}

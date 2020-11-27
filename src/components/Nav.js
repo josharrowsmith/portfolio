@@ -31,10 +31,25 @@ const NavStyles = styled(motion.div)`
     text-decoration: none;
   }
 `
+const Cursor = styled(motion.div)`
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  background: var(--color-text);
+  border-radius: 100%;
+  pointer-events: none;
+`
 
-export default function Nav({ setCursorHovered }) {
+export default function Nav() {
+  const [cursorHovered, setCursorHovered] = useState(false)
+  const ref = useRef(null)
+  const { docX, docY } = useMouse(ref)
+
   return (
-    <NavStyles>
+    <NavStyles ref={ref}>
       <div>
         <DarkToggle />
       </div>
@@ -49,6 +64,19 @@ export default function Nav({ setCursorHovered }) {
           </motion.li>
         </ul>
       </div>
+      <Cursor
+        initial={{ x: -100 }}
+        animate={{
+          x: docX - 16,
+          y: docY - 16,
+          scale: cursorHovered ? 1.2 : 1,
+          opacity: cursorHovered ? 0.8 : 0,
+        }}
+        transition={{
+          ease: 'linear',
+          duration: 0.2,
+        }}
+      />
     </NavStyles>
   )
 }

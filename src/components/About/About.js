@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
+import { useMouse } from 'react-use'
 import { Accordion } from './Accordion'
 import Scroll from '../../assets/images/hire.svg'
 
@@ -52,40 +53,69 @@ const ContactGrid = styled.div`
   gap: 1rem;
   justify-content: center;
 `
+const Cursor = styled(motion.div)`
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  background: var(--color-text);
+  border-radius: 100%;
+  pointer-events: none;
+`
 
-const About = ({ setCursorHovered }) => (
-  <AboutMeGrid>
-    <div>
-      <StyledScrollImage
-        src={Scroll}
-        alt="Hire Me!"
-        animate={{ rotate: -360 }}
-        transition={{ duration: 10, loop: Infinity, ease: 'linear' }}
+const About = () => {
+  const [cursorHovered, setCursorHovered] = useState(false)
+  const ref = useRef(null)
+  const { docX, docY } = useMouse(ref)
+  return (
+    <AboutMeGrid ref={ref}>
+      <div>
+        <StyledScrollImage
+          src={Scroll}
+          alt="Hire Me!"
+          animate={{ rotate: -360 }}
+          transition={{ duration: 10, loop: Infinity, ease: 'linear' }}
+        />
+        <Accordion />
+        <ContactGrid>
+          <motion.p>github</motion.p>
+          <motion.p>email</motion.p>
+          <motion.p>twiiter</motion.p>
+        </ContactGrid>
+      </div>
+      <AboutSection>
+        <h1>Josh Arrowsmith</h1>
+        <p>
+          I'm a software engineer. I specialize in Front-end development which
+          is building out the visual components of a website. I build
+          interactive, responsive and beautiful websites through carefully
+          crafted code and user-centric design. I work with technologies like
+          <motion.span
+            onMouseEnter={() => setCursorHovered(true)}
+            onMouseLeave={() => setCursorHovered(false)}
+          >
+            React Native
+          </motion.span>
+          , CSS3 and Javascript. I'm currently a freelancer and available to
+          work.
+        </p>
+      </AboutSection>
+      <Cursor
+        animate={{
+          x: docX - 50,
+          y: docY - 16,
+          scale: cursorHovered ? 1.2 : 1,
+          opacity: cursorHovered ? 0.8 : 0,
+        }}
+        transition={{
+          ease: 'linear',
+          duration: 0.2,
+        }}
       />
-      <Accordion />
-      <ContactGrid>
-        <p>github</p>
-        <p>email</p>
-        <p>twiiter</p>
-      </ContactGrid>
-    </div>
-    <AboutSection>
-      <h1>Josh Arrowsmith</h1>
-      <p>
-        I'm a software engineer. I specialize in Front-end development which is
-        building out the visual components of a website. I build interactive,
-        responsive and beautiful websites through carefully crafted code and
-        user-centric design. I work with technologies like
-        <motion.span
-          onMouseEnter={() => setCursorHovered(true)}
-          onMouseLeave={() => setCursorHovered(false)}
-        >
-          React Native
-        </motion.span>
-        , CSS3 and Javascript. I'm currently a freelancer and available to work.
-      </p>
-    </AboutSection>
-  </AboutMeGrid>
-)
+    </AboutMeGrid>
+  )
+}
 
 export default About
