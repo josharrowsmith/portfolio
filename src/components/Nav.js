@@ -46,7 +46,7 @@ const Cursor = styled(motion.div)`
 export default function Nav() {
   const [cursorHovered, setCursorHovered] = useState(false)
   const ref = useRef(null)
-  const { docX, docY } = useMouse(ref)
+  const { elX, elY } = useMouse(ref)
 
   return (
     <NavStyles ref={ref}>
@@ -67,8 +67,8 @@ export default function Nav() {
       <Cursor
         initial={{ x: -100 }}
         animate={{
-          x: docX - 16,
-          y: docY - 16,
+          x: elX - 16,
+          y: elY - 16,
           scale: cursorHovered ? 1.2 : 1,
           opacity: cursorHovered ? 0.8 : 0,
         }}

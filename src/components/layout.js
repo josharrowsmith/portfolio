@@ -1,8 +1,6 @@
-import React, { useState, useRef } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import { motion } from 'framer-motion'
-import { useWindowSize, useMouse } from 'react-use'
-import useMousePosition from './hooks/useMousePosition'
+import { useWindowSize } from 'react-use'
 import { ThemeProvider } from '../context/ThemeProvider'
 import 'normalize.css'
 import GlobalStyles from '../styles/GlobalStyles'
@@ -13,22 +11,7 @@ const ContentStyles = styled.div`
   padding: 2rem 4rem 4rem 4rem;
   /* height: 100vh; */
 `
-const Cursor = styled(motion.div)`
-  cursor: pointer;
-  height: 30px;
-  width: 30px;
-  position: absolute;
-  z-index: 10;
-  top: 0;
-  background: var(--color-text);
-  border-radius: 100%;
-  pointer-events: none;
-`
-
-export default function Layout({ children, data }) {
-  const [cursorHovered, setCursorHovered] = useState(false)
-  const ref = useRef(null)
-  const { docX, docY } = useMouse(ref)
+export default function Layout({ children }) {
   const { height } = useWindowSize()
 
   return (
@@ -49,22 +32,9 @@ export default function Layout({ children, data }) {
           <GlobalStyles />
           <Typography />
           <>
-            <Nav setCursorHovered={setCursorHovered} />
+            <Nav />
             <ContentStyles>{children}</ContentStyles>
           </>
-          <Cursor
-            initial={{ x: -100 }}
-            animate={{
-              x: -16,
-              y: docY - 16,
-              scale: cursorHovered ? 1.2 : 1,
-              opacity: cursorHovered ? 0.8 : 0,
-            }}
-            transition={{
-              ease: 'linear',
-              duration: 0.2,
-            }}
-          />
         </>
       )}
     </ThemeProvider>

@@ -26,7 +26,14 @@ const AboutSection = styled.div`
   }
   span {
     text-decoration: underline;
+    &:hover {
+      color: var(--color-text);
+      -webkit-text-fill-color: var(--color-background);
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: var(--color-text);
+    }
   }
+
   @media (max-width: 800px) {
     grid-template-columns: 1fr;
     grid-row-start: 1;
@@ -80,9 +87,24 @@ const About = () => {
         />
         <Accordion />
         <ContactGrid>
-          <motion.p>github</motion.p>
-          <motion.p>email</motion.p>
-          <motion.p>twiiter</motion.p>
+          <motion.p
+            onMouseEnter={() => setCursorHovered(true)}
+            onMouseLeave={() => setCursorHovered(false)}
+          >
+            github
+          </motion.p>
+          <motion.p
+            onMouseEnter={() => setCursorHovered(true)}
+            onMouseLeave={() => setCursorHovered(false)}
+          >
+            email
+          </motion.p>
+          <motion.p
+            onMouseEnter={() => setCursorHovered(true)}
+            onMouseLeave={() => setCursorHovered(false)}
+          >
+            twiiter
+          </motion.p>
         </ContactGrid>
       </div>
       <AboutSection>
@@ -96,6 +118,7 @@ const About = () => {
             onMouseEnter={() => setCursorHovered(true)}
             onMouseLeave={() => setCursorHovered(false)}
           >
+            {' '}
             React Native
           </motion.span>
           , CSS3 and Javascript. I'm currently a freelancer and available to
