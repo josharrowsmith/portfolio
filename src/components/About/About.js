@@ -24,15 +24,6 @@ const AboutSection = styled.div`
     justify-self: center;
     font-size: 7rem;
   }
-  span {
-    text-decoration: underline;
-    &:hover {
-      color: var(--color-text);
-      -webkit-text-fill-color: var(--color-background);
-      -webkit-text-stroke-width: 1px;
-      -webkit-text-stroke-color: var(--color-text);
-    }
-  }
 
   @media (max-width: 800px) {
     grid-template-columns: 1fr;
@@ -61,15 +52,16 @@ const ContactGrid = styled.div`
   justify-content: center;
 `
 const Cursor = styled(motion.div)`
-  cursor: pointer;
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
   position: absolute;
   z-index: 10;
   top: 0;
-  background: var(--color-text);
+  background-color: var(--color-text);
+  /* border: 1px var(--color-text) solid; */
   border-radius: 100%;
   pointer-events: none;
+  mix-blend-mode: difference;
 `
 
 const About = () => {
@@ -130,7 +122,7 @@ const About = () => {
           x: docX - 50,
           y: docY - 16,
           scale: cursorHovered ? 1.2 : 1,
-          opacity: cursorHovered ? 0.8 : 0,
+          opacity: cursorHovered ? 1 : 0,
         }}
         transition={{
           ease: 'linear',

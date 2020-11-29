@@ -1,12 +1,26 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
+import mix from 'mix-color'
 
 const accordionIds = [
   {
     id: 0,
     title: 'Frontend',
-    results: ['React', 'Node.js', 'Gatsby'],
+    results: [
+      'React',
+      'Node.js',
+      'Gatsby',
+      'other stuff',
+      'cool',
+      'yes',
+      'other stuff',
+      'cool',
+      'yes',
+      'other stuff',
+      'cool',
+      'yes',
+    ],
   },
   {
     id: 1,
@@ -55,14 +69,23 @@ const AccordionContent = styled(motion.div)`
   overflow: hidden;
   padding-left: 40px;
   display: flex;
-  flex-direction: column;
-  font-size: 2rem;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.5rem;
   text-transform: lowercase;
+  span {
+    font-size: 1.5rem;
+    padding: 5px;
+  }
 `
 
 const AccordionSetup = ({ details, expanded, setExpanded }) => {
   const isOpen = details.id === expanded
   const [hovered, setHovered] = useState(false)
+
+  const tags = Object.keys(details.results).map(
+    result => details.results[result]
+  )
 
   return (
     <>
@@ -89,8 +112,19 @@ const AccordionSetup = ({ details, expanded, setExpanded }) => {
         animate={{ height: isOpen ? 'auto' : '0' }}
         transition={{ duration: 0.8, ease: [0.6, 0.05, -0.01, 0.9] }}
       >
-        {details.results.map((result, index) => (
-          <span key={index}>{result}</span>
+        {tags.map((tag, index) => (
+          <span
+            key={index}
+            style={{
+              color: mix('#00F260', '#0575E6', `${index / tags.length}`),
+              borderColor: mix('#00F260', '#0575E6', `${index / tags.length}`),
+              borderWidth: '2px',
+              borderStyle: 'solid',
+              borderRadius: '10px',
+            }}
+          >
+            {tag}
+          </span>
         ))}
       </AccordionContent>
     </>

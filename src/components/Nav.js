@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import styled from 'styled-components'
 import { useMouse } from 'react-use'
 import DarkToggle from './Toggle/DarkToggle'
+import { ThemeContext } from '../context/ThemeProvider'
 
 const NavStyles = styled(motion.div)`
   display: flex;
@@ -33,12 +34,11 @@ const NavStyles = styled(motion.div)`
 `
 const Cursor = styled(motion.div)`
   cursor: pointer;
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
   position: absolute;
   z-index: 10;
   top: 0;
-  background: var(--color-text);
   border-radius: 100%;
   pointer-events: none;
 `
@@ -47,6 +47,7 @@ export default function Nav() {
   const [cursorHovered, setCursorHovered] = useState(false)
   const ref = useRef(null)
   const { elX, elY } = useMouse(ref)
+  const { colorMode } = React.useContext(ThemeContext)
 
   return (
     <NavStyles ref={ref}>
@@ -70,7 +71,8 @@ export default function Nav() {
           x: elX - 16,
           y: elY - 16,
           scale: cursorHovered ? 1.2 : 1,
-          opacity: cursorHovered ? 0.8 : 0,
+          opacity: cursorHovered ? 1 : 0,
+          background: colorMode === 'light' ? 'black' : 'white',
         }}
         transition={{
           ease: 'linear',
