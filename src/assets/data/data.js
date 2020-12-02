@@ -13,6 +13,7 @@ export const ProjectData = [
     img: 'twitch',
     descrption: 'more stuff',
     github: 'https://github.com',
+    tags: 'other, stuff, here',
   },
   {
     id: 2,
@@ -20,6 +21,7 @@ export const ProjectData = [
     img: 'twitch',
     descrption: 'more stuff',
     github: 'https://github.com',
+    tags: 'html, react, css, php, native, web',
   },
   {
     id: 3,
@@ -27,6 +29,7 @@ export const ProjectData = [
     img: 'twitch',
     descrption: 'more stuff',
     github: 'https://github.com',
+    tags: 'html, react, css, php, native, web',
   },
   {
     id: 4,
@@ -34,5 +37,6 @@ export const ProjectData = [
     img: 'twitch',
     descrption: 'more stuff',
     github: 'https://github.com',
+    tags: 'html, react, css, php, native, web',
   },
 ]
