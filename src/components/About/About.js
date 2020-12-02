@@ -2,6 +2,13 @@ import React, { useState, useRef } from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 import { useMouse } from 'react-use'
+import {
+  FaGithub,
+  FaTwitterSquare,
+  FaMailBulk,
+  FaTwitch,
+  FaLinkedin,
+} from 'react-icons/fa'
 import { Accordion } from './Accordion'
 import Scroll from '../../assets/images/hire.svg'
 
@@ -23,6 +30,12 @@ const AboutSection = styled.div`
     align-self: center;
     justify-self: center;
     font-size: 7rem;
+  }
+
+  span {
+    background: linear-gradient(to right, #00f260 0%, #0575e6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   @media (max-width: 800px) {
@@ -48,8 +61,12 @@ const StyledScrollImage = styled(motion.img)`
 const ContactGrid = styled.div`
   display: flex;
   flex-direction: row;
-  gap: 1rem;
+  gap: 2rem;
   justify-content: center;
+  margin: 2rem 0;
+  a {
+    font-size: 3.5rem;
+  }
 `
 const Cursor = styled(motion.div)`
   height: 40px;
@@ -79,24 +96,36 @@ const About = () => {
         />
         <Accordion />
         <ContactGrid>
-          <motion.p
+          <motion.a
             onMouseEnter={() => setCursorHovered(true)}
             onMouseLeave={() => setCursorHovered(false)}
           >
-            github
-          </motion.p>
-          <motion.p
+            <FaGithub />
+          </motion.a>
+          <motion.a
             onMouseEnter={() => setCursorHovered(true)}
             onMouseLeave={() => setCursorHovered(false)}
           >
-            email
-          </motion.p>
-          <motion.p
+            <FaMailBulk />
+          </motion.a>
+          <motion.a
             onMouseEnter={() => setCursorHovered(true)}
             onMouseLeave={() => setCursorHovered(false)}
           >
-            twiiter
-          </motion.p>
+            <FaTwitterSquare />
+          </motion.a>
+          <motion.a
+            onMouseEnter={() => setCursorHovered(true)}
+            onMouseLeave={() => setCursorHovered(false)}
+          >
+            <FaTwitch />
+          </motion.a>
+          <motion.a
+            onMouseEnter={() => setCursorHovered(true)}
+            onMouseLeave={() => setCursorHovered(false)}
+          >
+            <FaLinkedin />
+          </motion.a>
         </ContactGrid>
       </div>
       <AboutSection>

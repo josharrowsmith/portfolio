@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
+import mix from 'mix-color'
 import { DragSlider } from '../Slider/DragSlider'
 import { Container, FlexItem } from '../Slider/Box'
 import { ProjectData } from '../../assets/data/data'
@@ -100,6 +101,7 @@ const Projects = data => (
           const HangMan = data.images.hangMan.childImageSharp.fluid
           const Parks = data.images.parks.childImageSharp.fluid
           const FaceOff = data.images.faceOff.childImageSharp.fluid
+          console.log(project)
           return (
             <FlexItem key={project.id}>
               <AssetContainer>
@@ -151,9 +153,10 @@ const Projects = data => (
                     <p>store</p>
                   </Links>
                   <Languages>
-                    <p>html</p>
-                    <p>javascipt</p>
-                    <p>code</p>
+                    {/* {i.tags.map((tag, index) => {
+                      console.log(tag)
+                      return <p>{tag}</p>
+                    })} */}
                   </Languages>
                 </ProjectContainer>
               </AssetContainer>

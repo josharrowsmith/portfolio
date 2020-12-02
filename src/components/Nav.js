@@ -33,14 +33,16 @@ const NavStyles = styled(motion.div)`
   }
 `
 const Cursor = styled(motion.div)`
-  cursor: pointer;
   height: 40px;
   width: 40px;
   position: absolute;
   z-index: 10;
   top: 0;
+  background-color: var(--color-text);
+  /* border: 1px var(--color-text) solid; */
   border-radius: 100%;
   pointer-events: none;
+  mix-blend-mode: difference;
 `
 
 export default function Nav() {

@@ -5,6 +5,7 @@ export const ProjectData = [
     img: 'skatePark',
     descrption: 'stuff',
     github: 'https://github.com',
+    tags: 'html, react, css, php, native, web',
   },
   {
     id: 1,
