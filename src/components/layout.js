@@ -6,6 +6,7 @@ import 'normalize.css'
 import GlobalStyles from '../styles/GlobalStyles'
 import Typography from '../styles/Typography'
 import Nav from './Nav'
+import useDoubleClick from './hooks/useDoubleClick'
 
 const ContentStyles = styled.div`
   padding: 2rem 4rem 4rem 4rem;
@@ -13,6 +14,10 @@ const ContentStyles = styled.div`
 `
 export default function Layout({ children }) {
   const { height } = useWindowSize()
+  const [refCallback] = useDoubleClick(doStuff)
+  function doStuff() {
+    console.log('yes')
+  }
 
   return (
     <ThemeProvider>
@@ -33,7 +38,7 @@ export default function Layout({ children }) {
           <Typography />
           <>
             <Nav />
-            <ContentStyles>{children}</ContentStyles>
+            <ContentStyles ref={refCallback}>{children}</ContentStyles>
           </>
         </>
       )}

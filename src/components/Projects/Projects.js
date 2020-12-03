@@ -92,18 +92,22 @@ const Languages = styled.div`
 `
 
 const Projects = data => {
-  const projects = Object.values(ProjectData).map(project => project)
-  // const tags = Object.keys(projects).map(result => projects[result].tags)
+  // const projects = Object.values(ProjectData).map(project => project)
+  // // const tags = Object.keys(projects).map(result => projects[result].tags)
+  console.log('kill myself')
   return (
     <ProjectsSection>
       <Container>
         <DragSlider>
-          {projects.map((project, i) => {
+          {ProjectData.map((project, i) => {
             const skatePark = data.images.skatePark.childImageSharp.fluid
             const twitch = data.images.twitch.childImageSharp.fluid
             const HangMan = data.images.hangMan.childImageSharp.fluid
             const Parks = data.images.parks.childImageSharp.fluid
             const FaceOff = data.images.faceOff.childImageSharp.fluid
+            const tags = Object.keys(project.tags).map(
+              fucck => project.tags[fucck]
+            )
             return (
               <FlexItem key={project.id}>
                 <AssetContainer>
@@ -155,7 +159,28 @@ const Projects = data => {
                       <p>store</p>
                     </Links>
                     <Languages>
-                      <p>{project.tags}</p>
+                      {tags.map((tag, index) => (
+                        <p
+                          key={index}
+                          style={{
+                            color: mix(
+                              '#00F260',
+                              '#0575E6',
+                              `${index / tags.length}`
+                            ),
+                            borderColor: mix(
+                              '#00F260',
+                              '#0575E6',
+                              `${index / tags.length}`
+                            ),
+                            borderWidth: '2px',
+                            borderStyle: 'solid',
+                            borderRadius: '10px',
+                          }}
+                        >
+                          {tag}
+                        </p>
+                      ))}
                     </Languages>
                   </ProjectContainer>
                 </AssetContainer>

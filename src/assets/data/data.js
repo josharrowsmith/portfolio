@@ -5,7 +5,7 @@ export const ProjectData = [
     img: 'skatePark',
     descrption: 'stuff',
     github: 'https://github.com',
-    tags: 'html, react, css, php, native, web',
+    tags: ['html', 'react', 'css', 'php', 'native', 'web'],
   },
   {
     id: 1,
@@ -13,7 +13,7 @@ export const ProjectData = [
     img: 'twitch',
     descrption: 'more stuff',
     github: 'https://github.com',
-    tags: 'other, stuff, here',
+    tags: ['cool', 'react', 'css', 'php', 'native', 'stuff'],
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ export const ProjectData = [
     img: 'twitch',
     descrption: 'more stuff',
     github: 'https://github.com',
-    tags: 'html, react, css, php, native, web',
+    tags: ['html', 'react', 'css', 'php', 'native', 'web'],
   },
   {
     id: 3,
@@ -29,7 +29,7 @@ export const ProjectData = [
     img: 'twitch',
     descrption: 'more stuff',
     github: 'https://github.com',
-    tags: 'html, react, css, php, native, web',
+    tags: ['html', 'react', 'css', 'php', 'native', 'web'],
   },
   {
     id: 4,
@@ -37,6 +37,6 @@ export const ProjectData = [
     img: 'twitch',
     descrption: 'more stuff',
     github: 'https://github.com',
-    tags: 'html, react, css, php, native, web',
+    tags: ['html', 'react', 'css', 'php', 'native', 'web'],
   },
 ]
