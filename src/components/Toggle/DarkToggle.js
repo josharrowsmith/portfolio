@@ -1,25 +1,58 @@
 import React from 'react'
+import { motion } from 'framer-motion'
+import styled from 'styled-components'
 import { ThemeContext } from '../../context/ThemeProvider'
+
+const SwitchContainer = styled(motion.div)`
+  &.switch {
+    width: 70px;
+    height: 40px;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    padding: 0 5px;
+  }
+  &.switch div {
+    width: 30px;
+    height: 30px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.02);
+  }
+  &.switch.on {
+    background-color: #22cc88;
+    justify-content: flex-end;
+  }
+
+  &.switch.off {
+    background-color: #dddddd;
+    justify-content: flex-start;
+  }
+`
+
+function Switch({ isOn, ...props }) {
+  const className = `switch ${isOn ? 'on' : 'off'}`
+
+  return (
+    <SwitchContainer magic className={className} {...props}>
+      <motion.div magic />
+    </SwitchContainer>
+  )
+}
 
 const DarkToggle = () => {
   const { colorMode, setColorMode } = React.useContext(ThemeContext)
+  console.log(colorMode)
 
   if (!colorMode) {
     return null
   }
 
   return (
-    <label>
-      <input
-        type="checkbox"
-        style={{ marginRight: '1rem' }}
-        checked={colorMode === 'dark'}
-        onChange={ev => {
-          setColorMode(ev.target.checked ? 'dark' : 'light')
-        }}
-      />
-      Dark
-    </label>
+    <Switch
+      isOn={colorMode === 'dark'}
+      onClick={() => setColorMode(colorMode === 'light' ? 'dark' : 'light')}
+    />
   )
 }
 

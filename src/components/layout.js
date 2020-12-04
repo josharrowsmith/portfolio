@@ -14,10 +14,10 @@ const ContentStyles = styled.div`
 `
 export default function Layout({ children }) {
   const { height } = useWindowSize()
-  const [refCallback] = useDoubleClick(doStuff)
   function doStuff() {
     console.log('yes')
   }
+  const [refCallback] = useDoubleClick(doStuff)
 
   return (
     <ThemeProvider>
