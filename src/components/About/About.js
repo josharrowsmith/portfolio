@@ -11,6 +11,7 @@ import {
 } from 'react-icons/fa'
 import { Accordion } from './Accordion'
 import Scroll from '../../assets/images/hire.svg'
+import { ThemeContext } from '../../context/ThemeProvider'
 
 const AboutMeGrid = styled.div`
   display: grid;
@@ -62,7 +63,7 @@ const ContactGrid = styled.div`
   display: flex;
   flex-direction: row;
   gap: 2rem;
-  justify-content: center;
+  justify-content: flex-start;
   margin: 2rem 0;
   a {
     font-size: 3.5rem;
@@ -74,8 +75,7 @@ const Cursor = styled(motion.div)`
   position: absolute;
   z-index: 10;
   top: 0;
-  background-color: var(--color-text);
-  /* border: 1px var(--color-text) solid; */
+  border: 1px var(--color-text) solid;
   border-radius: 100%;
   pointer-events: none;
   mix-blend-mode: difference;
@@ -85,6 +85,7 @@ const About = () => {
   const [cursorHovered, setCursorHovered] = useState(false)
   const ref = useRef(null)
   const { docX, docY } = useMouse(ref)
+  const { colorMode } = React.useContext(ThemeContext)
   return (
     <AboutMeGrid ref={ref}>
       <div>
@@ -152,6 +153,7 @@ const About = () => {
           y: docY - 16,
           scale: cursorHovered ? 1.2 : 1,
           opacity: cursorHovered ? 1 : 0,
+          background: colorMode === 'light' ? 'transparent' : 'white',
         }}
         transition={{
           ease: 'linear',

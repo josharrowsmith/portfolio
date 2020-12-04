@@ -73,6 +73,7 @@ const AccordionContent = styled(motion.div)`
   flex-wrap: wrap;
   gap: 0.5rem;
   text-transform: lowercase;
+  margin: 0.5rem 0;
   span {
     font-size: 1.5rem;
     padding: 5px;

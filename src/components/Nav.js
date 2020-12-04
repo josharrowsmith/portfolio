@@ -38,8 +38,7 @@ const Cursor = styled(motion.div)`
   position: absolute;
   z-index: 10;
   top: 0;
-  background-color: var(--color-text);
-  /* border: 1px var(--color-text) solid; */
+  border: 1px var(--color-text) solid;
   border-radius: 100%;
   pointer-events: none;
   mix-blend-mode: difference;
@@ -74,7 +73,7 @@ export default function Nav() {
           y: elY - 16,
           scale: cursorHovered ? 1.2 : 1,
           opacity: cursorHovered ? 1 : 0,
-          background: colorMode === 'light' ? 'black' : 'white',
+          background: colorMode === 'light' ? 'transparent' : 'white',
         }}
         transition={{
           ease: 'linear',

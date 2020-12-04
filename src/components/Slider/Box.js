@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { motion } from 'framer-motion'
 
 export const Container = styled.div`
   height: 100vh;
@@ -10,7 +11,7 @@ export const Container = styled.div`
   }
 `
 
-export const Box = styled.div`
+export const Box = styled(motion.div)`
   width: 600px;
   height: 600px;
   border: var(--color-text) 5px solid;
