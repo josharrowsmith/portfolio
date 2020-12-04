@@ -62,7 +62,7 @@ export default function Nav() {
             onMouseLeave={() => setCursorHovered(false)}
           >
             <Link to="/">About</Link>
-            <Link to="/">Projects</Link>
+            <Link to="/FaceOff">Projects</Link>
           </motion.li>
         </ul>
       </div>

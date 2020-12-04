@@ -51,6 +51,7 @@ const GlobalStyles = createGlobalStyle`
     height: 100vh;
     background: var(--color-background);
     color: var(--color-text);
+    overflow-x: hidden;
   }
 
   fieldset {
