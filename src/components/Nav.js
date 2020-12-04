@@ -73,7 +73,7 @@ export default function Nav() {
           y: elY - 16,
           scale: cursorHovered ? 1.2 : 1,
           opacity: cursorHovered ? 1 : 0,
-          background: colorMode === 'light' ? 'transparent' : 'white',
+          background: colorMode === 'light' ? 'white;' : 'white',
         }}
         transition={{
           ease: 'linear',

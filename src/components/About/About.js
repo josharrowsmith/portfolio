@@ -79,6 +79,7 @@ const Cursor = styled(motion.div)`
   border-radius: 100%;
   pointer-events: none;
   mix-blend-mode: difference;
+  cursor: none !important;
 `
 
 const About = () => {
@@ -98,6 +99,8 @@ const About = () => {
         <Accordion />
         <ContactGrid>
           <motion.a
+            href="http://google.com"
+            target="_blank"
             onMouseEnter={() => setCursorHovered(true)}
             onMouseLeave={() => setCursorHovered(false)}
           >

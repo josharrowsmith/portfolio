@@ -20,7 +20,7 @@ const SwitchContainer = styled(motion.div)`
     box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.02);
   }
   &.switch.on {
-    background-color: #22cc88;
+    background-color: #00f260;
     justify-content: flex-end;
   }
 
