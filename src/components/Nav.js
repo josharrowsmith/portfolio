@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import { useMouse } from 'react-use'
 import DarkToggle from './Toggle/DarkToggle'
 import { ThemeContext } from '../context/ThemeProvider'
+import { TLink } from './TLink'
 
 const NavStyles = styled(motion.div)`
   display: flex;
@@ -48,7 +49,7 @@ export default function Nav() {
   const [cursorHovered, setCursorHovered] = useState(false)
   const ref = useRef(null)
   const { elX, elY } = useMouse(ref)
-  const { colorMode } = React.useContext(ThemeContext)
+  const { colorMode } = 'light'
 
   return (
     <NavStyles ref={ref}>
@@ -61,8 +62,8 @@ export default function Nav() {
             onMouseEnter={() => setCursorHovered(true)}
             onMouseLeave={() => setCursorHovered(false)}
           >
-            <Link to="/">About</Link>
-            <Link to="/FaceOff">Projects</Link>
+            <TLink to="/">home</TLink>
+            <TLink to="/test">Projects</TLink>
           </motion.li>
         </ul>
       </div>

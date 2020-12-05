@@ -42,7 +42,6 @@ function Switch({ isOn, ...props }) {
 
 const DarkToggle = () => {
   const { colorMode, setColorMode } = React.useContext(ThemeContext)
-  console.log(colorMode)
 
   if (!colorMode) {
     return null
