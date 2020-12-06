@@ -5,16 +5,16 @@ import { ThemeContext } from '../../context/ThemeProvider'
 
 const SwitchContainer = styled(motion.div)`
   &.switch {
-    width: 70px;
-    height: 40px;
+    width: 50px;
+    height: 30px;
     border-radius: 100px;
     display: flex;
     align-items: center;
     padding: 0 5px;
   }
   &.switch div {
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     background-color: #ffffff;
     border-radius: 15px;
     box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.02);

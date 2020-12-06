@@ -66,7 +66,7 @@ const ContactGrid = styled.div`
   justify-content: flex-start;
   margin: 2rem 0;
   a {
-    font-size: 3.5rem;
+    font-size: 3.2rem;
   }
 `
 const Cursor = styled(motion.div)`

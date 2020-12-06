@@ -2,11 +2,13 @@ import React from 'react'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
 import mix from 'mix-color'
+import { motion } from 'framer-motion'
+import { FaGithub, FaTwitch, FaGooglePlay } from 'react-icons/fa'
 import { DragSlider } from '../Slider/DragSlider'
 import { Container, FlexItem } from '../Slider/Box'
 import { ProjectData } from '../../assets/data/data'
 
-const ProjectsSection = styled.div`
+const ProjectsSection = styled(motion.div)`
   display: flex;
   width: 100%;
   height: calc(100vh - 4rem);
@@ -47,7 +49,6 @@ const DragMe = styled.p`
 const AssetContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
   padding: 2rem;
   width: 100%;
 `
@@ -63,22 +64,32 @@ const ProjectContainer = styled.div`
   align-items: center;
 `
 
-const ProjectName = styled.p`
-  align-self: center;
-  margin-bottom: 0;
+const ProjectName = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  p {
+    margin-bottom: 0.8rem;
+    z-index: 10;
+  }
 `
 const Description = styled.p`
   text-align: center;
   margin: 0;
+  font-size: 2rem;
+  margin-bottom: 0.8rem;
 `
 const Links = styled.div`
   display: flex;
   justify-content: flex-start;
   flex-direction: row;
+  align-self: flex-end;
   flex-wrap: wrap;
   gap: 1rem;
-  p {
-    margin: 0;
+  grid-column: 3/ 4;
+  justify-self: flex-end;
+  a {
+    font-size: 3.2rem;
   }
 `
 const Languages = styled.div`
@@ -90,11 +101,17 @@ const Languages = styled.div`
   p {
     font-size: 1.5rem;
     padding: 5px;
+    margin: 0;
   }
 `
 
 const Projects = data => (
-  <ProjectsSection>
+  <ProjectsSection
+    animate={{ opacity: 1 }}
+    initial={{ opacity: 0 }}
+    exit={{ opacity: 0 }}
+    transition={{ delay: 0.7 }}
+  >
     <Container>
       <DragSlider>
         {ProjectData.map((project, i) => {
@@ -151,12 +168,29 @@ const Projects = data => (
                   />
                 )}
                 <ProjectContainer>
-                  <ProjectName>{project.name}</ProjectName>
+                  <ProjectName>
+                    <div style={{ gridColumn: '2 / 3 ', textAlign: 'center' }}>
+                      <p>{project.name}</p>
+                    </div>
+                    <Links>
+                      {project.github && (
+                        <a href={project.github} target="_blank" rel="noopener">
+                          <FaGithub />
+                        </a>
+                      )}
+                      {project.play && (
+                        <a href={project.play} target="_blank" rel="noopener">
+                          <FaGooglePlay />
+                        </a>
+                      )}
+                      {project.twitch && (
+                        <a href={project.twitch} target="_blank" rel="noopener">
+                          <FaTwitch />
+                        </a>
+                      )}
+                    </Links>{' '}
+                  </ProjectName>
                   <Description>{project.descrption}</Description>
-                  <Links>
-                    <p>github</p>
-                    <p>store</p>
-                  </Links>
                   <Languages>
                     {tags.map((tag, index) => (
                       <p
