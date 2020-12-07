@@ -51,6 +51,7 @@ const AssetContainer = styled.div`
   flex-direction: column;
   padding: 2rem;
   width: 100%;
+  align-items: center;
 `
 const StyledImage = styled(Img)`
   width: 100%;
@@ -124,7 +125,7 @@ const Projects = data => (
             fucck => project.tags[fucck]
           )
           return (
-            <FlexItem whileTap={{ scale: 0.9 }} key={project.id}>
+            <FlexItem key={project.id}>
               <AssetContainer>
                 {i === 0 && (
                   <StyledImage
@@ -174,21 +175,21 @@ const Projects = data => (
                     </div>
                     <Links>
                       {project.github && (
-                        <a href={project.github} target="_blank" rel="noopener">
+                        <a href={project.github} target="_blank">
                           <FaGithub />
                         </a>
                       )}
                       {project.play && (
-                        <a href={project.play} target="_blank" rel="noopener">
+                        <a href={project.play} target="_blank">
                           <FaGooglePlay />
                         </a>
                       )}
                       {project.twitch && (
-                        <a href={project.twitch} target="_blank" rel="noopener">
+                        <a href={project.twitch} target="_blank">
                           <FaTwitch />
                         </a>
                       )}
-                    </Links>{' '}
+                    </Links>
                   </ProjectName>
                   <Description>{project.descrption}</Description>
                   <Languages>

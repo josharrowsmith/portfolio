@@ -4,7 +4,7 @@ export const ProjectData = [
     name: 'Skatepark App',
     descrption:
       'A React Native aplication to find skateparks near you ! You can search, rate and find new parks in your area or chnage you location with a drop of a pin',
-    github: 'https://github.com',
+    github: 'https://github.com/josharrowsmith/skateparks-app',
     play: 'https://play.google.com/store/apps/details?id=com.skate.beta',
     tags: [
       'react',
@@ -25,7 +25,7 @@ export const ProjectData = [
     name: 'Twitch Overlay',
     descrption:
       'A Twitch extension video overlay which tracks statistics from the Destiny 2 API in realtime, using socket.io to create a connection between the streamer and all his viewers',
-    github: 'https://github.com',
+    github: 'https://github.com/josharrowsmith/TwitchOverlay',
     twitch: 'https://www.twitch.tv/p/extensions/',
     tags: [
       'react',
@@ -43,22 +43,31 @@ export const ProjectData = [
   {
     id: 2,
     name: 'Hang Man',
-    descrption: 'more stuff',
-    github: 'https://github.com',
-    tags: ['html', 'react', 'css', 'php', 'native', 'web'],
+    descrption:
+      'A hang man game implemented in the C programming language using BSD sockets on the Linux operating system',
+    github: 'https://github.com/josharrowsmith/Hangman',
+    tags: ['c', 'multithreading', 'sockets'],
   },
   {
     id: 3,
     name: 'Parks',
-    descrption: 'more stuff',
-    github: 'https://github.com',
-    tags: ['html', 'react', 'css', 'php', 'native', 'web'],
+    descrption:
+      'A Webiste build to help find parks facilities in and around Brisbane ',
+    github: 'https://github.com/josharrowsmith/Parks',
+    tags: ['php', 'mysql', 'css', 'html', 'PDO'],
   },
   {
     id: 4,
     name: 'FaceOff',
-    descrption: 'more stuff',
-    github: 'https://github.com',
-    tags: ['html', 'react', 'css', 'php', 'native', 'web'],
+    descrption:
+      'A aplication which lets you login with your face using facial recognition',
+    github: 'https://github.com/josharrowsmith/face-off-App',
+    tags: [
+      'react-native',
+      ' Kairos API',
+      'firebase',
+      'cloudinary',
+      'facial recognition',
+    ],
   },
 ]

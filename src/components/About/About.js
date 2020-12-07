@@ -8,6 +8,7 @@ import {
   FaMailBulk,
   FaTwitch,
   FaLinkedin,
+  FaGooglePlay,
 } from 'react-icons/fa'
 import { Accordion } from './Accordion'
 import Scroll from '../../assets/images/hire.svg'
@@ -99,7 +100,7 @@ const About = () => {
         <Accordion />
         <ContactGrid>
           <motion.a
-            href="http://google.com"
+            href="https://github.com/josharrowsmith"
             target="_blank"
             onMouseEnter={() => setCursorHovered(true)}
             onMouseLeave={() => setCursorHovered(false)}
@@ -107,24 +108,32 @@ const About = () => {
             <FaGithub />
           </motion.a>
           <motion.a
+            href="mailto:josh.arrowsmith12@gmail.com"
+            target="_blank"
             onMouseEnter={() => setCursorHovered(true)}
             onMouseLeave={() => setCursorHovered(false)}
           >
             <FaMailBulk />
           </motion.a>
           <motion.a
+            href="https://twitter.com/JoshArrowsmith9"
+            target="_blank"
             onMouseEnter={() => setCursorHovered(true)}
             onMouseLeave={() => setCursorHovered(false)}
           >
             <FaTwitterSquare />
           </motion.a>
           <motion.a
+            href="https://play.google.com/store/apps/details?id=com.skate.beta"
+            target="_blank"
             onMouseEnter={() => setCursorHovered(true)}
             onMouseLeave={() => setCursorHovered(false)}
           >
-            <FaTwitch />
+            <FaGooglePlay />
           </motion.a>
           <motion.a
+            href="https://www.linkedin.com/in/josh-arrowsmith-723b02164/"
+            target="_blank"
             onMouseEnter={() => setCursorHovered(true)}
             onMouseLeave={() => setCursorHovered(false)}
           >

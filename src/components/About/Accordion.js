@@ -11,22 +11,23 @@ const accordionIds = [
       'react',
       'node',
       'gatsby',
-      'javascript',
       'GraphQL',
+      'redux',
       'framer-motion',
       'react-spring',
       'html',
       'css',
-      'styled component',
+      'javascript',
       'socket.io',
       'sass',
+      'styled component',
       'webpack',
     ],
   },
   {
     id: 1,
     title: 'Backend',
-    results: ['node', 'express', 'php', 'java', 'c', 'socket.io'],
+    results: ['node', 'express', 'php', 'socket.io', 'rust'],
   },
   {
     id: 2,
@@ -41,7 +42,7 @@ const accordionIds = [
   {
     id: 4,
     title: 'Web Services',
-    results: ['google cloud', 'mlabs', 'heroku', 'netlify', 'firebase'],
+    results: ['google cloud', 'heroku', 'netlify', 'firebase'],
   },
 ]
 
