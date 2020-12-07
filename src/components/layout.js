@@ -7,7 +7,6 @@ import 'normalize.css'
 import GlobalStyles from '../styles/GlobalStyles'
 import Typography from '../styles/Typography'
 import Nav from './Nav'
-import useDoubleClick from './hooks/useDoubleClick'
 
 const duration = 0.5
 
@@ -37,11 +36,6 @@ const ContentStyles = styled.div`
 `
 export default function Layout({ children }) {
   const { height } = useWindowSize()
-  function doStuff() {
-    console.log('yes')
-  }
-  const [refCallback] = useDoubleClick(doStuff)
-
   return (
     <ThemeProvider>
       {height < 830 ? (
@@ -53,7 +47,7 @@ export default function Layout({ children }) {
             height: '100vh',
           }}
         >
-          <h1>Its not ready</h1>
+          Not ready
         </div>
       ) : (
         <>
@@ -68,7 +62,7 @@ export default function Layout({ children }) {
                 animate="enter"
                 exit="exit"
               >
-                <ContentStyles ref={refCallback}>{children}</ContentStyles>
+                <ContentStyles>{children}</ContentStyles>
               </motion.main>
             </AnimatePresence>
           </>

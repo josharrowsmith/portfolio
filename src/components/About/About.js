@@ -13,6 +13,7 @@ import {
 import { Accordion } from './Accordion'
 import Scroll from '../../assets/images/hire.svg'
 import { ThemeContext } from '../../context/ThemeProvider'
+import ExplosionScren from '../Explosion/ExplosionScren'
 
 const AboutMeGrid = styled.div`
   display: grid;
@@ -140,6 +141,7 @@ const About = () => {
             <FaLinkedin />
           </motion.a>
         </ContactGrid>
+        <ExplosionScren />
       </div>
       <AboutSection>
         <h1>Josh Arrowsmith</h1>
