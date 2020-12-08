@@ -2,6 +2,12 @@ import Exotic from '../../assets/images/icons/exotic.png'
 import Purple from '../../assets/images/icons/purple.png'
 import Pink from '../../assets/images/icons/pink.png'
 import DarkPurple from '../../assets/images/icons/dark-purple.png'
+import Redbull from '../../assets/images/icons/redbull.png'
+import Bmx from '../../assets/images/icons/bmx.png'
+import Fries from '../../assets/images/icons/fries.png'
+import Donuts from '../../assets/images/icons/donuts.png'
+import React from '../../assets/images/icons/react.png'
+import Yoda from '../../assets/images/icons/yoda.png'
 
 export const STATIC_DENSITY = 30
 export const PARTICLE_SIZE = 30
@@ -15,24 +21,34 @@ export const airFriction = 0.02
 
 export const sprites = [
   {
-    src: Exotic,
+    src: Donuts,
     size: 25,
     airFrictionMultiplier: 0.75,
   },
   {
-    src: Purple,
+    src: Fries,
     size: 25,
     airFrictionMultiplier: 1.2,
   },
   {
-    src: Pink,
+    src: Bmx,
     size: 25,
     airFrictionMultiplier: 1.15,
   },
   {
-    src: DarkPurple,
+    src: Redbull,
     size: 25,
     airFrictionMultiplier: 0.9,
+  },
+  {
+    src: React,
+    size: 25,
+    airFrictionMultiplier: 0.5,
+  },
+  {
+    src: Yoda,
+    size: 25,
+    airFrictionMultiplier: 0.5,
   },
 ]
 

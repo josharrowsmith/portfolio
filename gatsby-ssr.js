@@ -23,7 +23,7 @@ function setColorsByTheme() {
   if (hasUsedToggle) {
     colorMode = persistedPreference
   } else {
-    colorMode = prefersDarkFromMQ ? 'dark' : 'light'
+    colorMode = prefersDarkFromMQ ? 'light' : 'dark'
   }
 
   const root = document.documentElement
