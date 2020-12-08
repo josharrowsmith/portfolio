@@ -52,6 +52,9 @@ const AssetContainer = styled.div`
   padding: 2rem;
   width: 100%;
   align-items: center;
+  @media (max-width: 800px) {
+    padding: 0;
+  }
 `
 const StyledImage = styled(Img)`
   width: 100%;
@@ -79,6 +82,9 @@ const Description = styled.p`
   margin: 0;
   font-size: 2rem;
   margin-bottom: 0.8rem;
+  @media (max-width: 800px) {
+    display: none;
+  }
 `
 const Links = styled.div`
   display: flex;
@@ -92,6 +98,9 @@ const Links = styled.div`
   a {
     font-size: 3.2rem;
   }
+  @media (max-width: 800px) {
+    display: none;
+  }
 `
 const Languages = styled.div`
   display: flex;
@@ -104,6 +113,9 @@ const Languages = styled.div`
     padding: 5px;
     margin: 0;
   }
+  @media (max-width: 800px) {
+    display: none;
+  }
 `
 
 const Projects = data => (
@@ -111,7 +123,7 @@ const Projects = data => (
     animate={{ opacity: 1 }}
     initial={{ opacity: 0 }}
     exit={{ opacity: 0 }}
-    transition={{ delay: 0.7 }}
+    transition={{ delay: 0.8 }}
   >
     <Container>
       <DragSlider>

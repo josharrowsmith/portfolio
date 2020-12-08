@@ -32,13 +32,14 @@ const variants = {
 
 const ContentStyles = styled.div`
   padding: 2rem 4rem 4rem 4rem;
+  width: 100vw;
   /* height: 100vh; */
 `
 export default function Layout({ children }) {
   const { height } = useWindowSize()
   return (
     <ThemeProvider>
-      {height < 830 ? (
+      {/* {height < 830 ? (
         <div
           style={{
             display: 'flex',
@@ -49,25 +50,25 @@ export default function Layout({ children }) {
         >
           Not ready
         </div>
-      ) : (
+      ) : ( */}
+      <>
+        <GlobalStyles />
+        <Typography />
         <>
-          <GlobalStyles />
-          <Typography />
-          <>
-            <Nav />
-            <AnimatePresence>
-              <motion.main
-                variants={variants}
-                initial="initial"
-                animate="enter"
-                exit="exit"
-              >
-                <ContentStyles>{children}</ContentStyles>
-              </motion.main>
-            </AnimatePresence>
-          </>
+          <Nav />
+          <AnimatePresence>
+            <motion.main
+              variants={variants}
+              initial="initial"
+              animate="enter"
+              exit="exit"
+            >
+              <ContentStyles>{children}</ContentStyles>
+            </motion.main>
+          </AnimatePresence>
         </>
-      )}
+      </>
+      {/* )} */}
     </ThemeProvider>
   )
 }

@@ -6,7 +6,6 @@ import {
   FaGithub,
   FaTwitterSquare,
   FaMailBulk,
-  FaTwitch,
   FaLinkedin,
   FaGooglePlay,
 } from 'react-icons/fa'
@@ -18,9 +17,23 @@ import ExplosionScren from '../Explosion/ExplosionScren'
 const AboutMeGrid = styled.div`
   display: grid;
   grid-template-columns: 30% 70%;
+  grid-template-rows: 350px 1fr;
   justify-items: center;
   @media (max-width: 800px) {
-    grid-template-columns: 1fr;
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr auto;
+    justify-content: center;
+    align-items: center;
+  }
+`
+const StyledScrollImage = styled(motion.img)`
+  will-change: transform;
+  width: 300px;
+  height: 300px;
+  margin-bottom: 2rem;
+  filter: var(--color-logo);
+  @media (max-width: 800px) {
+    grid-row: 1;
   }
 `
 
@@ -28,6 +41,7 @@ const AboutSection = styled.div`
   display: grid;
   grid-template-columns: 15% 1fr;
   align-items: center;
+  grid-row: 1 / 3;
   h1 {
     writing-mode: vertical-rl;
     align-self: center;
@@ -42,22 +56,21 @@ const AboutSection = styled.div`
   }
 
   @media (max-width: 800px) {
+    grid-row: 2;
     grid-template-columns: 1fr;
-    grid-row-start: 1;
     h1 {
       writing-mode: horizontal-tb;
-      font-size: inherit;
+      font-size: 3.5rem;
+      justify-self: flex-start;
     }
   }
 `
-const StyledScrollImage = styled(motion.img)`
-  will-change: transform;
-  width: 300px;
-  height: 300px;
-  margin-bottom: 2rem;
-  filter: var(--color-logo);
+
+const Infromation = styled.div`
+  grid-row: 2;
+  grid-column: 1;
   @media (max-width: 800px) {
-    display: none;
+    grid-row: 4;
   }
 `
 
@@ -69,6 +82,9 @@ const ContactGrid = styled.div`
   margin: 2rem 0;
   a {
     font-size: 3.2rem;
+  }
+  @media (max-width: 800px) {
+    grid-row-start: 5;
   }
 `
 const Cursor = styled(motion.div)`
@@ -98,6 +114,8 @@ const About = () => {
           animate={{ rotate: -360 }}
           transition={{ duration: 10, loop: Infinity, ease: 'linear' }}
         />
+      </div>
+      <Infromation>
         <Accordion />
         <ContactGrid>
           <motion.a
@@ -142,7 +160,7 @@ const About = () => {
           </motion.a>
         </ContactGrid>
         <ExplosionScren />
-      </div>
+      </Infromation>
       <AboutSection>
         <h1>Josh Arrowsmith</h1>
         <p>

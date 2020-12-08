@@ -56,15 +56,13 @@ export default function Nav() {
         <DarkToggle />
       </div>
       <div>
-        <ul>
-          <motion.li
-            onMouseEnter={() => setCursorHovered(true)}
-            onMouseLeave={() => setCursorHovered(false)}
-          >
-            <Link to="/">Home</Link>
-            {/* <Link to="/FaceOff">Projects</Link> */}
-          </motion.li>
-        </ul>
+        <motion.li
+          onMouseEnter={() => setCursorHovered(true)}
+          onMouseLeave={() => setCursorHovered(false)}
+        >
+          <Link to="/">Home</Link>
+          {/* <Link to="/FaceOff">Projects</Link> */}
+        </motion.li>
       </div>
       <Cursor
         initial={{ x: -100 }}
