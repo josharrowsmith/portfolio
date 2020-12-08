@@ -146,10 +146,8 @@ const About = () => {
       <AboutSection>
         <h1>Josh Arrowsmith</h1>
         <p>
-          I'm a software engineer. I specialize in Front-end development which
-          is building out the visual components of a website. I build
-          interactive, responsive and beautiful websites through carefully
-          crafted code and user-centric design. I work with technologies like
+          I'm a Software engineer, I specialize in Front-end development mainly
+          React and{' '}
           <motion.span
             onMouseEnter={() => setCursorHovered(true)}
             onMouseLeave={() => setCursorHovered(false)}
@@ -157,8 +155,24 @@ const About = () => {
             {' '}
             React Native
           </motion.span>
-          , CSS3 and Javascript. I'm currently a freelancer and available to
-          work.
+          , i have been taking a diving deep into the JamStack and serverless
+          architecture using{' '}
+          <motion.span
+            onMouseEnter={() => setCursorHovered(true)}
+            onMouseLeave={() => setCursorHovered(false)}
+          >
+            {' '}
+            Gatsby{' '}
+          </motion.span>{' '}
+          and GraphQL. I am have worked at a digital agency doing Wordpress and
+          Shopify development with a little Neto on the side. if you would like
+          to get in contact{' '}
+          <motion.span
+            onMouseEnter={() => setCursorHovered(true)}
+            onMouseLeave={() => setCursorHovered(false)}
+          >
+            @josh.arrowsmith12@gmail.com
+          </motion.span>
         </p>
       </AboutSection>
       <Cursor
