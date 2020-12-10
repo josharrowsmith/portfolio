@@ -35,6 +35,7 @@ const ContentStyles = styled.div`
   min-height: calc(100vh - 40px);
   display: grid;
   grid-template-rows: auto 1fr auto;
+  max-width: 800px;
 `
 export default function Layout({ children }) {
   const { height } = useWindowSize()
