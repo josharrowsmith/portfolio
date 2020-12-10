@@ -38,6 +38,8 @@ export default function SEO({ children, location, description, title, image }) {
       />
       <meta property="og:description" content={description} key="ogdesc" />
       <meta name="theme-color" content="#000" />
+      <meta property="og:image:width" content="600" />
+      <meta property="og:image:height" content="600" />
       {children}
     </Helmet>
   )
