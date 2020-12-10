@@ -109,7 +109,7 @@ const About = () => {
     <AboutMeGrid ref={ref}>
       <div
         style={{
-          maxWidth: '300px',
+          minWidth: '300px',
           width: '100%',
           display: 'flex',
           justifyContent: 'center',
