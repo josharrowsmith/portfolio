@@ -20,7 +20,7 @@ function IndexPage({ data }) {
     <>
       <HomePageGrid>
         <About />
-        <Projects images={data} />
+        {/* <Projects images={data} /> */}
       </HomePageGrid>
     </>
   )
