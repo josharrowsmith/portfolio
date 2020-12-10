@@ -19,8 +19,10 @@ function IndexPage({ data }) {
   return (
     <>
       <HomePageGrid>
-        <About />
-        <Projects images={data} />
+        <h1>hey</h1>
+        <h1>man</h1>
+        {/* <About />
+        <Projects images={data} /> */}
       </HomePageGrid>
     </>
   )

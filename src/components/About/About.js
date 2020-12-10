@@ -19,7 +19,6 @@ const AboutMeGrid = styled.div`
   grid-template-columns: 30% 70%;
   grid-template-rows: 350px 1fr;
   justify-items: center;
-  max-width: 600px;
   @media (max-width: 800px) {
     grid-template-columns: 100%;
     grid-template-rows: 1fr auto;
