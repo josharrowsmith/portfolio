@@ -36,7 +36,14 @@ const StyledScrollImage = styled(motion.img)`
     grid-row: 1;
   }
 `
-
+const Infromation = styled.div`
+  grid-row: 2;
+  grid-column: 1;
+  @media (max-width: 800px) {
+    grid-row: 4;
+    min-width: 600px;
+  }
+`
 const AboutSection = styled.div`
   display: grid;
   grid-template-columns: 15% 1fr;
@@ -63,14 +70,6 @@ const AboutSection = styled.div`
       font-size: 3.5rem;
       justify-self: flex-start;
     }
-  }
-`
-
-const Infromation = styled.div`
-  grid-row: 2;
-  grid-column: 1;
-  @media (max-width: 800px) {
-    grid-row: 4;
   }
 `
 
@@ -123,7 +122,7 @@ const About = () => {
           transition={{ duration: 10, loop: Infinity, ease: 'linear' }}
         />
       </div>
-      {/* <Infromation>
+      <Infromation>
         <Accordion />
         <ContactGrid>
           <motion.a
@@ -213,7 +212,7 @@ const About = () => {
           ease: 'linear',
           duration: 0.2,
         }}
-      /> */}
+      />
     </AboutMeGrid>
   )
 }
