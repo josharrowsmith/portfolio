@@ -12,7 +12,6 @@ const HomePageGrid = styled.div`
   grid-template-columns: 60% 40%;
   @media (max-width: 800px) {
     display: flex;
-    max-width: 800px;
   }
 `
 
