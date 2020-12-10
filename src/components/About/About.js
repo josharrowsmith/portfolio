@@ -77,11 +77,11 @@ const AboutSection = styled.div`
 const ContactGrid = styled.div`
   display: flex;
   flex-direction: row;
-  gap: 2rem;
   justify-content: flex-start;
   margin: 2rem 0;
   a {
     font-size: 3.2rem;
+    margin-right: 2rem;
   }
   @media (max-width: 800px) {
     grid-row-start: 5;

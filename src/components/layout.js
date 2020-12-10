@@ -36,18 +36,6 @@ export default function Layout({ children }) {
   const { height } = useWindowSize()
   return (
     <ThemeProvider>
-      {/* {height < 830 ? (
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            height: '100vh',
-          }}
-        >
-          Not ready
-        </div>
-      ) : ( */}
       <>
         <SEO metaData="hey" />
         <GlobalStyles />
@@ -66,7 +54,6 @@ export default function Layout({ children }) {
           </AnimatePresence>
         </>
       </>
-      {/* )} */}
     </ThemeProvider>
   )
 }
