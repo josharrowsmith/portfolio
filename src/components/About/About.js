@@ -30,7 +30,7 @@ const StyledScrollImage = styled(motion.img)`
   will-change: transform;
   width: 300px;
   height: 300px;
-  margin-bottom: 2rem;
+  /* margin-bottom: 2rem; */
   filter: var(--color-logo);
   @media (max-width: 800px) {
     grid-row: 1;
@@ -107,7 +107,15 @@ const About = () => {
   const { colorMode } = React.useContext(ThemeContext)
   return (
     <AboutMeGrid ref={ref}>
-      <div>
+      <div
+        style={{
+          maxWidth: '100%',
+          width: '100%',
+          display: 'flex',
+          justifyContent: 'center',
+          overflow: 'hidden',
+        }}
+      >
         <StyledScrollImage
           src={Scroll}
           alt="Hire Me!"

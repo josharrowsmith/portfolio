@@ -71,17 +71,16 @@ const ProjectContainer = styled.div`
 const ProjectName = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  align-items: center;
   width: 100%;
   p {
-    margin-bottom: 0.8rem;
+    margin-bottom: 0;
     z-index: 10;
   }
 `
 const Description = styled.p`
   text-align: center;
-  margin: 0;
   font-size: 2rem;
-  margin-bottom: 0.8rem;
   @media (max-width: 800px) {
     display: none;
   }

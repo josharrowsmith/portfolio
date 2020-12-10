@@ -28,10 +28,15 @@ const GlobalStyles = createGlobalStyle`
     --blue: #2d2dff;
   }
   html {
-    background-image: #000;
-    background-size: 450px;
-    background-attachment: fixed;
+    --size: 40px;
+    @media(max-width: 800px) {
+      --size: 20px;
+    }
+    --borderSize: calc(var(--size) / 2);
+    box-sizing: border-box;
+    border: var(--borderSize) solid var(--color-background);
     font-size: 10px;
+    position: relative;
   }
 
   * {
@@ -48,10 +53,9 @@ const GlobalStyles = createGlobalStyle`
 
   body {
     font-size: 2rem;
-    height: 100vh;
     background: var(--color-background);
     color: var(--color-text);
-    overflow-x: hidden;
+    min-height: calc(100vh - 40px);
   }
 
   fieldset {
@@ -74,9 +78,21 @@ const GlobalStyles = createGlobalStyle`
     image-rendering: pixelated;
   }
 
+  img {
+    max-width: 100%;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+  }
+  img {
+    color: var(--color-text);
+    fill: currentColor;
+  }
   /* Scrollbar Styles */
   body::-webkit-scrollbar {
-    width: 30px;
+    width: 12px;
   }
   html {
     scrollbar-width: thin;
@@ -87,28 +103,8 @@ const GlobalStyles = createGlobalStyle`
   }
   body::-webkit-scrollbar-thumb {
     background-color: var(--color-text) ;
-    border-radius: 15px;
-    border: 3px solid var(--color-text);
-  }
-
-  img {
-    max-width: 100%;
-    -webkit-user-drag: none;
-    -khtml-user-drag: none;
-    -moz-user-drag: none;
-    -o-user-drag: none;
-    user-drag: none;
-  }
-
-  .tilt {
-    transform: rotate(-2deg);
-    position: relative;
-    display: inline-block;
-  }
-
-  img {
-    color: var(--color-text);
-    fill: currentColor;
+    border-radius: 6px;
+    border: 3px solid var(--color-background);
   }
 
 `

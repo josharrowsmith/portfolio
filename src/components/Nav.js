@@ -21,12 +21,9 @@ const NavStyles = styled(motion.div)`
     margin-right: 4rem;
   }
   li {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: start;
-    align-content: center;
-    grid-gap: 2rem;
+    display: flex;
     margin: 1rem;
+    justify-content: flex-end;
   }
   a {
     text-decoration: none;

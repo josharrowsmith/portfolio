@@ -14,10 +14,13 @@ const Typography = createGlobalStyle`
   p, li {
     letter-spacing: 0.5px;
     font-size: 2.5rem;
+    margin: 0;
+    margin-bottom: 0.8rem;
   }
   h1,h2,h3,h4,h5,h6 {
     font-weight: normal;
     margin: 0;
+    margin-bottom: 0.8rem;
   }
   a {
     color: var(--color-text);

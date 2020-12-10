@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useWindowSize } from 'react-use'
 import { ThemeProvider } from '../context/ThemeProvider'
+import SEO from './SEO/SEO'
 import 'normalize.css'
 import GlobalStyles from '../styles/GlobalStyles'
 import Typography from '../styles/Typography'
@@ -31,15 +32,15 @@ const variants = {
 }
 
 const ContentStyles = styled.div`
-  padding: 2rem 4rem 4rem 4rem;
-  width: 100vw;
-  /* height: 100vh; */
+  min-height: calc(100vh - 40px);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 `
 export default function Layout({ children }) {
   const { height } = useWindowSize()
   return (
     <ThemeProvider>
-      {height < 830 ? (
+      {/* {height < 830 ? (
         <div
           style={{
             display: 'flex',
@@ -50,25 +51,26 @@ export default function Layout({ children }) {
         >
           Not ready
         </div>
-      ) : (
+      ) : ( */}
+      <>
+        <SEO metaData="hey" />
+        <GlobalStyles />
+        <Typography />
         <>
-          <GlobalStyles />
-          <Typography />
-          <>
-            <Nav />
-            <AnimatePresence>
-              <motion.main
-                variants={variants}
-                initial="initial"
-                animate="enter"
-                exit="exit"
-              >
-                <ContentStyles>{children}</ContentStyles>
-              </motion.main>
-            </AnimatePresence>
-          </>
+          <Nav />
+          <AnimatePresence>
+            <motion.main
+              variants={variants}
+              initial="initial"
+              animate="enter"
+              exit="exit"
+            >
+              <ContentStyles>{children}</ContentStyles>
+            </motion.main>
+          </AnimatePresence>
         </>
-      )}
+      </>
+      {/* )} */}
     </ThemeProvider>
   )
 }
