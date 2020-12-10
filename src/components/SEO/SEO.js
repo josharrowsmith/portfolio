@@ -37,11 +37,8 @@ export default function SEO({ children, location, description, title, image }) {
         key="ogsitename"
       />
       <meta property="og:description" content={description} key="ogdesc" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="black" />
       <meta name="theme-color" content="#000" />
-      <meta
-        name="apple-mobile-web-app-status-bar-style"
-        content="black-translucent"
-      />
       {children}
     </Helmet>
   )

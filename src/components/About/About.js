@@ -24,6 +24,7 @@ const AboutMeGrid = styled.div`
     grid-template-rows: 1fr auto;
     justify-content: center;
     align-items: center;
+    max-width: 600px;
   }
 `
 const StyledScrollImage = styled(motion.img)`
