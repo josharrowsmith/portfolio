@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import Matter from 'matter-js'
+import { useWindowSize } from 'react-use'
 import {
   STATIC_DENSITY,
   airFriction,
@@ -22,6 +23,7 @@ export default function ExplosionScren({ results }) {
   const [constraints, setContraints] = useState()
   const [scene, setScene] = useState()
   const [someStateValue, setSomeStateValue] = useState(false)
+  const { width: mobile } = useWindowSize()
 
   // Resize the window
   const handleResize = () => {
@@ -103,6 +105,7 @@ export default function ExplosionScren({ results }) {
     // Add a new "ball" everytime `someStateValue` changes
     if (scene) {
       const { width, height } = constraints
+      console.log(width, height)
       for (let i = 0; i < 10; i++) {
         const sprite = sample(sprites)
 
@@ -119,11 +122,13 @@ export default function ExplosionScren({ results }) {
         const ball = Matter.Bodies.circle(
           100 + 125,
           height - 150,
-          sprite.size,
+          width <= 600 ? 1.5 : sprite.size,
           config
         )
 
-        const particleAngle = random(angle - spread, angle + spread)
+        const angle2 = width <= 600 ? 260 : angle
+
+        const particleAngle = random(angle2 - spread, angle2 + spread)
 
         const velocityMultiple = Math.random()
         const particleVelocity = normalize(
