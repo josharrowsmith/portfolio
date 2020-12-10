@@ -10,6 +10,7 @@ const HomePageGrid = styled.div`
   gap: 2rem;
   justify-items: center;
   grid-template-columns: 60% 40%;
+  max-width: 600px;
   @media (max-width: 800px) {
     grid-template-columns: 1fr;
   }
@@ -19,10 +20,8 @@ function IndexPage({ data }) {
   return (
     <>
       <HomePageGrid>
-        <h1>hey</h1>
-        <h1>man</h1>
-        {/* <About />
-        <Projects images={data} /> */}
+        <About />
+        <Projects images={data} />
       </HomePageGrid>
     </>
   )

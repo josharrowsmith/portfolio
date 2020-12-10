@@ -38,6 +38,10 @@ export default function SEO({ children, location, description, title, image }) {
       />
       <meta property="og:description" content={description} key="ogdesc" />
       <meta name="theme-color" content="#000" />
+      <meta
+        name="apple-mobile-web-app-status-bar-style"
+        content="black-translucent"
+      />
       {children}
     </Helmet>
   )
