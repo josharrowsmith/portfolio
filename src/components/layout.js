@@ -31,11 +31,7 @@ const variants = {
   },
 }
 
-const ContentStyles = styled.div`
-  min-height: calc(100vh - 40px);
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-`
+const ContentStyles = styled.div``
 export default function Layout({ children }) {
   const { height } = useWindowSize()
   return (

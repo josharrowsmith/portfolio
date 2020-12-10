@@ -20,7 +20,7 @@ const AboutMeGrid = styled.div`
   grid-template-rows: 350px 1fr;
   justify-items: center;
   @media (max-width: 800px) {
-    grid-template-columns: 100%;
+    grid-template-columns: 1fr;
     grid-template-rows: 1fr auto;
     justify-content: center;
     align-items: center;
@@ -36,14 +36,15 @@ const StyledScrollImage = styled(motion.img)`
     grid-row: 1;
   }
 `
+
 const Infromation = styled.div`
   grid-row: 2;
   grid-column: 1;
   @media (max-width: 800px) {
     grid-row: 4;
-    min-width: 600px;
   }
 `
+
 const AboutSection = styled.div`
   display: grid;
   grid-template-columns: 15% 1fr;
@@ -86,6 +87,7 @@ const ContactGrid = styled.div`
     grid-row-start: 5;
   }
 `
+
 const Cursor = styled(motion.div)`
   height: 40px;
   width: 40px;
