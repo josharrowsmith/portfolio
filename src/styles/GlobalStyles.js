@@ -37,6 +37,7 @@ const GlobalStyles = createGlobalStyle`
     border: var(--borderSize) solid var(--color-background);
     font-size: 10px;
     position: relative;
+    max-width: 100vw;
   }
 
   * {
