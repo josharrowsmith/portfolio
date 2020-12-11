@@ -1,7 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { motion, useMotionValue } from 'framer-motion'
-import { useWindowSize } from 'react-use'
 import { IntersectionObserver } from './IntersectionObserver'
 import { ScaleBox } from './ScaleBox'
 
@@ -17,8 +16,6 @@ const Slider = styled(motion.div)`
 export const DragSlider = ({ children }) => {
   const ref = useRef(null)
   const y = useMotionValue(0)
-  const { width } = useWindowSize()
-
   const [sliderWidth, setSliderWidth] = useState(0)
   const [sliderChildrenWidth, setSliderChildrenWidth] = useState(0)
   const [sliderConstraints, setSliderConstraints] = useState(0)
@@ -54,17 +51,13 @@ export const DragSlider = ({ children }) => {
     <div style={{ overflow: 'hidden' }}>
       <Slider
         ref={ref}
-        drag={width >= 800 ? 'y' : 'x'}
+        drag="y"
         initial={{ y: 0 }}
         style={{ y }}
-        dragConstraints={
-          width >= 800
-            ? {
-                top: `${-sliderConstraints}`,
-                bottom: 0,
-              }
-            : { left: `${-sliderConstraints}`, right: 0 }
-        }
+        dragConstraints={{
+          top: `${-sliderConstraints}`,
+          bottom: 0,
+        }}
         dragTransition={(100, 10)}
       >
         {children}

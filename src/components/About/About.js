@@ -1,7 +1,7 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
-import { useMouse } from 'react-use'
+import { useMouse, useWindowSize } from 'react-use'
 import {
   FaGithub,
   FaTwitterSquare,
@@ -104,8 +104,9 @@ const Cursor = styled(motion.div)`
 const About = () => {
   const [cursorHovered, setCursorHovered] = useState(false)
   const ref = useRef(null)
-  const { docX, docY } = useMouse(ref)
+  const { elX, elY } = useMouse(ref)
   const { colorMode } = React.useContext(ThemeContext)
+
   return (
     <AboutMeGrid ref={ref}>
       <div
@@ -168,7 +169,7 @@ const About = () => {
             <FaLinkedin />
           </motion.a>
         </ContactGrid>
-        <ExplosionScren />
+        {/* <ExplosionScren /> */}
       </Infromation>
       <AboutSection>
         <h1>Josh Arrowsmith</h1>
@@ -204,8 +205,8 @@ const About = () => {
       </AboutSection>
       <Cursor
         animate={{
-          x: docX - 50,
-          y: docY - 16,
+          x: elX - 16,
+          y: elY + 30,
           scale: cursorHovered ? 1.2 : 1,
           opacity: cursorHovered ? 1 : 0,
           background: colorMode === 'light' ? 'transparent' : 'white',

@@ -4,6 +4,7 @@ import Img from 'gatsby-image'
 import mix from 'mix-color'
 import { motion } from 'framer-motion'
 import { FaGithub, FaTwitch, FaGooglePlay } from 'react-icons/fa'
+import useDeviceDetect from '../hooks/useDeviceDetect'
 import { DragSlider } from '../Slider/DragSlider'
 import { Container, FlexItem } from '../Slider/Box'
 import { ProjectData } from '../../assets/data/data'
@@ -66,6 +67,10 @@ const ProjectContainer = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  width: 100%;
+  @media (max-width: 800px) {
+    max-width: 600px;
+  }
 `
 
 const ProjectName = styled.div`
@@ -82,7 +87,6 @@ const Description = styled.p`
   text-align: center;
   font-size: 2rem;
   @media (max-width: 800px) {
-    display: none;
   }
 `
 const Links = styled.div`
@@ -98,7 +102,6 @@ const Links = styled.div`
     font-size: 3.2rem;
   }
   @media (max-width: 800px) {
-    display: none;
   }
 `
 const Languages = styled.div`
@@ -113,129 +116,254 @@ const Languages = styled.div`
     margin: 0;
   }
   @media (max-width: 800px) {
-    display: none;
+    gap: 0.5rem;
   }
 `
 
-const Projects = data => (
-  <ProjectsSection
-    animate={{ opacity: 1 }}
-    initial={{ opacity: 0 }}
-    exit={{ opacity: 0 }}
-    transition={{ delay: 0.8 }}
-  >
-    <Container>
-      <DragSlider>
-        {ProjectData.map((project, i) => {
-          const skatePark = data.images.skatePark.childImageSharp.fluid
-          const twitch = data.images.twitch.childImageSharp.fluid
-          const HangMan = data.images.hangMan.childImageSharp.fluid
-          const Parks = data.images.parks.childImageSharp.fluid
-          const FaceOff = data.images.faceOff.childImageSharp.fluid
-          const tags = Object.keys(project.tags).map(
-            fucck => project.tags[fucck]
-          )
-          return (
-            <FlexItem key={project.id}>
-              <AssetContainer>
-                {i === 0 && (
-                  <StyledImage
-                    fluid={skatePark}
-                    imgStyle={{
-                      objectFit: 'contain',
+const Projects = data => {
+  const { isMobile } = useDeviceDetect()
+
+  return (
+    <ProjectsSection
+      animate={{ opacity: 1 }}
+      initial={{ opacity: 0 }}
+      exit={{ opacity: 0 }}
+      transition={{ delay: 0.8 }}
+    >
+      {isMobile ? (
+        <ProjectContainer>
+          {ProjectData.map((project, i) => {
+            const skatePark = data.images.skatePark.childImageSharp.fluid
+            const twitch = data.images.twitch.childImageSharp.fluid
+            const HangMan = data.images.hangMan.childImageSharp.fluid
+            const Parks = data.images.parks.childImageSharp.fluid
+            const FaceOff = data.images.faceOff.childImageSharp.fluid
+            const tags = Object.keys(project.tags).map(
+              fucck => project.tags[fucck]
+            )
+            return (
+              <div style={{ marginBottom: '2rem' }}>
+                <AssetContainer>
+                  {i === 0 && (
+                    <StyledImage
+                      fluid={skatePark}
+                      imgStyle={{
+                        objectFit: 'cover',
+                      }}
+                    />
+                  )}
+                  {i === 1 && (
+                    <StyledImage
+                      fluid={twitch}
+                      imgStyle={{
+                        objectFit: 'contain',
+                      }}
+                    />
+                  )}
+                  {i === 2 && (
+                    <StyledImage
+                      fluid={HangMan}
+                      imgStyle={{
+                        objectFit: 'contain',
+                      }}
+                    />
+                  )}
+                  {i === 3 && (
+                    <StyledImage
+                      style={{ width: '80%' }}
+                      fluid={Parks}
+                      imgStyle={{
+                        objectFit: 'cover',
+                      }}
+                    />
+                  )}
+                  {i === 4 && (
+                    <StyledImage
+                      fluid={FaceOff}
+                      imgStyle={{
+                        objectFit: 'contain',
+                      }}
+                    />
+                  )}
+                </AssetContainer>
+                <ProjectName>
+                  <div
+                    style={{
+                      gridColumn: '2 / 3 ',
+                      textAlign: 'center',
                     }}
-                  />
-                )}
-                {i === 1 && (
-                  <StyledImage
-                    fluid={twitch}
-                    imgStyle={{
-                      objectFit: 'contain',
-                    }}
-                  />
-                )}
-                {i === 2 && (
-                  <StyledImage
-                    fluid={HangMan}
-                    imgStyle={{
-                      objectFit: 'contain',
-                    }}
-                  />
-                )}
-                {i === 3 && (
-                  <StyledImage
-                    style={{ width: '80%' }}
-                    fluid={Parks}
-                    imgStyle={{
-                      objectFit: 'cover',
-                    }}
-                  />
-                )}
-                {i === 4 && (
-                  <StyledImage
-                    fluid={FaceOff}
-                    imgStyle={{
-                      objectFit: 'contain',
-                    }}
-                  />
-                )}
-                <ProjectContainer>
-                  <ProjectName>
-                    <div style={{ gridColumn: '2 / 3 ', textAlign: 'center' }}>
-                      <p>{project.name}</p>
-                    </div>
-                    <Links>
-                      {project.github && (
-                        <a href={project.github} target="_blank">
-                          <FaGithub />
-                        </a>
+                  >
+                    <p>{project.name}</p>
+                  </div>
+                  <Links>
+                    {project.github && (
+                      <a href={project.github} target="_blank">
+                        <FaGithub />
+                      </a>
+                    )}
+                    {project.play && (
+                      <a href={project.play} target="_blank">
+                        <FaGooglePlay />
+                      </a>
+                    )}
+                    {project.twitch && (
+                      <a href={project.twitch} target="_blank">
+                        <FaTwitch />
+                      </a>
+                    )}
+                  </Links>
+                </ProjectName>
+                <Description>{project.descrption}</Description>
+                <Languages>
+                  {tags.map((tag, index) => (
+                    <p
+                      key={index}
+                      style={{
+                        color: mix(
+                          '#00F260',
+                          '#0575E6',
+                          `${index / tags.length}`
+                        ),
+                        borderColor: mix(
+                          '#00F260',
+                          '#0575E6',
+                          `${index / tags.length}`
+                        ),
+                        borderWidth: '2px',
+                        borderStyle: 'solid',
+                        borderRadius: '10px',
+                      }}
+                    >
+                      {tag}
+                    </p>
+                  ))}
+                </Languages>
+              </div>
+            )
+          })}
+        </ProjectContainer>
+      ) : (
+        <>
+          <Container>
+            <DragSlider>
+              {ProjectData.map((project, i) => {
+                const skatePark = data.images.skatePark.childImageSharp.fluid
+                const twitch = data.images.twitch.childImageSharp.fluid
+                const HangMan = data.images.hangMan.childImageSharp.fluid
+                const Parks = data.images.parks.childImageSharp.fluid
+                const FaceOff = data.images.faceOff.childImageSharp.fluid
+                const tags = Object.keys(project.tags).map(
+                  fucck => project.tags[fucck]
+                )
+                return (
+                  <FlexItem key={project.id}>
+                    <AssetContainer>
+                      {i === 0 && (
+                        <StyledImage
+                          fluid={skatePark}
+                          imgStyle={{
+                            objectFit: 'contain',
+                          }}
+                        />
                       )}
-                      {project.play && (
-                        <a href={project.play} target="_blank">
-                          <FaGooglePlay />
-                        </a>
+                      {i === 1 && (
+                        <StyledImage
+                          fluid={twitch}
+                          imgStyle={{
+                            objectFit: 'contain',
+                          }}
+                        />
                       )}
-                      {project.twitch && (
-                        <a href={project.twitch} target="_blank">
-                          <FaTwitch />
-                        </a>
+                      {i === 2 && (
+                        <StyledImage
+                          fluid={HangMan}
+                          imgStyle={{
+                            objectFit: 'contain',
+                          }}
+                        />
                       )}
-                    </Links>
-                  </ProjectName>
-                  <Description>{project.descrption}</Description>
-                  <Languages>
-                    {tags.map((tag, index) => (
-                      <p
-                        key={index}
-                        style={{
-                          color: mix(
-                            '#00F260',
-                            '#0575E6',
-                            `${index / tags.length}`
-                          ),
-                          borderColor: mix(
-                            '#00F260',
-                            '#0575E6',
-                            `${index / tags.length}`
-                          ),
-                          borderWidth: '2px',
-                          borderStyle: 'solid',
-                          borderRadius: '10px',
-                        }}
-                      >
-                        {tag}
-                      </p>
-                    ))}
-                  </Languages>
-                </ProjectContainer>
-              </AssetContainer>
-            </FlexItem>
-          )
-        })}
-      </DragSlider>
-    </Container>
-    <DragMe>Drag Me</DragMe>
-  </ProjectsSection>
-)
+                      {i === 3 && (
+                        <StyledImage
+                          style={{ width: '80%' }}
+                          fluid={Parks}
+                          imgStyle={{
+                            objectFit: 'cover',
+                          }}
+                        />
+                      )}
+                      {i === 4 && (
+                        <StyledImage
+                          fluid={FaceOff}
+                          imgStyle={{
+                            objectFit: 'contain',
+                          }}
+                        />
+                      )}
+                      <ProjectContainer>
+                        <ProjectName>
+                          <div
+                            style={{
+                              gridColumn: '2 / 3 ',
+                              textAlign: 'center',
+                            }}
+                          >
+                            <p>{project.name}</p>
+                          </div>
+                          <Links>
+                            {project.github && (
+                              <a href={project.github} target="_blank">
+                                <FaGithub />
+                              </a>
+                            )}
+                            {project.play && (
+                              <a href={project.play} target="_blank">
+                                <FaGooglePlay />
+                              </a>
+                            )}
+                            {project.twitch && (
+                              <a href={project.twitch} target="_blank">
+                                <FaTwitch />
+                              </a>
+                            )}
+                          </Links>
+                        </ProjectName>
+                        <Description>{project.descrption}</Description>
+                        <Languages>
+                          {tags.map((tag, index) => (
+                            <p
+                              key={index}
+                              style={{
+                                color: mix(
+                                  '#00F260',
+                                  '#0575E6',
+                                  `${index / tags.length}`
+                                ),
+                                borderColor: mix(
+                                  '#00F260',
+                                  '#0575E6',
+                                  `${index / tags.length}`
+                                ),
+                                borderWidth: '2px',
+                                borderStyle: 'solid',
+                                borderRadius: '10px',
+                              }}
+                            >
+                              {tag}
+                            </p>
+                          ))}
+                        </Languages>
+                      </ProjectContainer>
+                    </AssetContainer>
+                  </FlexItem>
+                )
+              })}
+            </DragSlider>
+          </Container>
+          <DragMe>Drag Me</DragMe>
+        </>
+      )}
+    </ProjectsSection>
+  )
+}
 
 export default Projects

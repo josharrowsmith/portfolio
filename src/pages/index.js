@@ -12,6 +12,7 @@ const HomePageGrid = styled.div`
   grid-template-columns: 60% 40%;
   @media (max-width: 800px) {
     display: flex;
+    flex-direction: column;
   }
 `
 
@@ -31,6 +32,13 @@ export const query = graphql`
     skatePark: file(relativePath: { eq: "skatePark.png" }) {
       childImageSharp {
         fluid(maxWidth: 800) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    mskatepark: file(relativePath: { eq: "mskatepark.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 600) {
           ...GatsbyImageSharpFluid
         }
       }
