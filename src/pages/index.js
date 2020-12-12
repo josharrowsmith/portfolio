@@ -1,6 +1,5 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { motion } from 'framer-motion'
 import styled from 'styled-components'
 import About from '../components/About/About'
 import Projects from '../components/Projects/Projects'

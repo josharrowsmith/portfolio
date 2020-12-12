@@ -16,24 +16,16 @@ import {
   sprites,
 } from './util'
 
-export default function ExplosionScren({ results }) {
+export default function ExplosionScren({ trigger, elx, ely }) {
   // Mater Stuff
   const boxRef = useRef(null)
   const canvasRef = useRef(null)
   const [constraints, setContraints] = useState()
   const [scene, setScene] = useState()
-  const [someStateValue, setSomeStateValue] = useState(false)
-  const { width: mobile } = useWindowSize()
 
   // Resize the window
   const handleResize = () => {
     setContraints(boxRef.current.getBoundingClientRect())
-  }
-
-  // Main function
-  const handleClick = () => {
-    setSomeStateValue(!someStateValue)
-    console.log('yes')
   }
 
   // This setup the the World
@@ -105,7 +97,6 @@ export default function ExplosionScren({ results }) {
     // Add a new "ball" everytime `someStateValue` changes
     if (scene) {
       const { width, height } = constraints
-      console.log(width, height)
       for (let i = 0; i < 10; i++) {
         const sprite = sample(sprites)
 
@@ -120,8 +111,8 @@ export default function ExplosionScren({ results }) {
         }
 
         const ball = Matter.Bodies.circle(
-          100 + 125,
-          height - 150,
+          elx,
+          ely,
           width <= 600 ? 1.5 : sprite.size,
           config
         )
@@ -163,18 +154,15 @@ export default function ExplosionScren({ results }) {
         Matter.World.add(scene.engine.world, ball)
       }
     }
-  }, [results, someStateValue])
+  }, [trigger])
 
   return (
     <>
-      <button title="click" type="button" onClick={handleClick}>
-        click me for fun
-      </button>
       <div
         ref={boxRef}
         style={{
           position: 'absolute',
-          top: 0,
+          bottom: 0,
           left: 0,
           width: '100%',
           height: '100%',

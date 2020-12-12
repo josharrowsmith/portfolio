@@ -33,7 +33,6 @@ const variants = {
 
 const ContentStyles = styled.div``
 export default function Layout({ children }) {
-  const { height } = useWindowSize()
   return (
     <ThemeProvider>
       <>

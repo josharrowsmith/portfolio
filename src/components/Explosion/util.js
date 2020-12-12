@@ -12,7 +12,7 @@ import Yoda from '../../assets/images/icons/yoda.png'
 export const STATIC_DENSITY = 30
 export const PARTICLE_SIZE = 30
 export const PARTICLE_BOUNCYNESS = 0.9
-export const angle = 300
+export const angle = 280
 export const spread = 20
 export const velocity = 30
 export const angularVelocity = 0.5
