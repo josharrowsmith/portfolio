@@ -33,7 +33,9 @@ export const DragSlider = ({ children }) => {
     calcSliderChildrenWidth()
 
     const calcSliderWidth = () => {
-      setSliderWidth(ref.current.clientWidth)
+      if (ref.current.clientWidth !== null) {
+        setSliderWidth(ref.current.clientWidth)
+      }
     }
 
     calcSliderWidth()
