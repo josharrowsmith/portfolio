@@ -6,10 +6,9 @@ import Projects from '../components/Projects/Projects'
 
 const HomePageGrid = styled.div`
   display: grid;
-  gap: 2rem;
   justify-items: center;
   grid-template-columns: 60% 40%;
-  @media (max-width: 800px) {
+  @media (max-width: 900px) {
     display: flex;
     flex-direction: column;
   }

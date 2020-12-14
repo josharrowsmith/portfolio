@@ -29,7 +29,7 @@ const GlobalStyles = createGlobalStyle`
   }
   html {
     --size: 40px;
-    @media(max-width: 800px) {
+    @media(max-width: 900px) {
       --size: 20px;
     }
     --borderSize: calc(var(--size) / 2);

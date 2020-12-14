@@ -21,7 +21,13 @@ const AboutMeGrid = styled.div`
   grid-template-rows: 350px 1fr;
   justify-items: center;
   height: 100%;
-  @media (max-width: 800px) {
+  @media (max-width: 1400px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 100vh auto;
+    justify-content: center;
+    align-items: center;
+  }
+  @media (max-width: 900px) {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr auto;
     justify-content: center;
@@ -34,15 +40,22 @@ const StyledScrollImage = styled(motion.img)`
   height: 300px;
   /* margin-bottom: 2rem; */
   filter: var(--color-logo);
-  @media (max-width: 800px) {
+  @media (max-width: 1400px) {
+    display: none;
+  }
+  @media (max-width: 900px) {
     grid-row: 1;
+    display: block;
   }
 `
 
 const Infromation = styled.div`
   grid-row: 2;
   grid-column: 1;
-  @media (max-width: 800px) {
+  @media (max-width: 1400px) {
+    grid-row: 3;
+  }
+  @media (max-width: 900px) {
     grid-row: 4;
   }
 `
@@ -64,8 +77,12 @@ const AboutSection = styled.div`
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+  @media (max-width: 1400px) {
+    grid-row-start: 1;
+    grid-column-start: 1;
+  }
 
-  @media (max-width: 800px) {
+  @media (max-width: 900px) {
     grid-row: 2;
     grid-template-columns: 1fr;
     h1 {
@@ -85,7 +102,7 @@ const ContactGrid = styled.div`
     font-size: 3.2rem;
     margin-right: 2rem;
   }
-  @media (max-width: 800px) {
+  @media (max-width: 900px) {
     grid-row-start: 5;
   }
 `

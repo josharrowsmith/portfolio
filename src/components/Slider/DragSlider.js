@@ -8,7 +8,7 @@ const Slider = styled(motion.div)`
   cursor: grab;
   display: flex;
   flex-direction: column;
-  @media (max-width: 800px) {
+  @media (max-width: 900px) {
     flex-direction: row;
   }
 `

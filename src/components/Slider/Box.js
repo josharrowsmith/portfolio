@@ -3,10 +3,11 @@ import { motion } from 'framer-motion'
 
 export const Container = styled.div`
   height: 100vh;
-  width: 600px;
+  width: 100%;
+  max-width: 600px;
   overflow-y: hidden;
   margin-top: 4rem;
-  @media (max-width: 800px) {
+  @media (max-width: 900px) {
     width: 100%;
     margin-top: 0;
     height: auto;
@@ -14,7 +15,8 @@ export const Container = styled.div`
 `
 
 export const Box = styled(motion.div)`
-  width: 600px;
+  width: 100%;
+  max-width: 600px;
   height: 600px;
   border: var(--color-text) 5px solid;
   font-size: 72px;
@@ -22,7 +24,7 @@ export const Box = styled(motion.div)`
   margin-bottom: 3rem;
   justify-content: center;
   align-items: center;
-  @media (max-width: 800px) {
+  @media (max-width: 900px) {
     width: 250px;
     height: 300px;
     margin-right: 1rem;

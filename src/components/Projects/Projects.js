@@ -16,7 +16,7 @@ const ProjectsSection = styled(motion.div)`
   justify-content: flex-end;
   align-items: center;
   overflow-y: hidden;
-  @media (max-width: 800px) {
+  @media (max-width: 900px) {
     justify-content: center;
     height: auto;
     overflow-y: scroll;
@@ -43,7 +43,10 @@ const DragMe = styled.p`
     top: 50%;
     margin-left: 1rem;
   }
-  @media (max-width: 800px) {
+  @media (max-width: 1600px) {
+    display: none;
+  }
+  @media (max-width: 900px) {
     display: none;
   }
 `
@@ -53,7 +56,7 @@ const AssetContainer = styled.div`
   padding: 2rem;
   width: 100%;
   align-items: center;
-  @media (max-width: 800px) {
+  @media (max-width: 900px) {
     padding: 0;
   }
 `
@@ -68,7 +71,7 @@ const ProjectContainer = styled.div`
   justify-content: flex-start;
   align-items: center;
   width: 100%;
-  @media (max-width: 800px) {
+  @media (max-width: 900px) {
     max-width: 600px;
   }
 `
@@ -86,7 +89,7 @@ const ProjectName = styled.div`
 const Description = styled.p`
   text-align: center;
   font-size: 2rem;
-  @media (max-width: 800px) {
+  @media (max-width: 900px) {
   }
 `
 const Links = styled.div`
@@ -101,7 +104,7 @@ const Links = styled.div`
   a {
     font-size: 3.2rem;
   }
-  @media (max-width: 800px) {
+  @media (max-width: 900px) {
   }
 `
 const Languages = styled.div`
@@ -115,7 +118,7 @@ const Languages = styled.div`
     padding: 5px;
     margin: 0;
   }
-  @media (max-width: 800px) {
+  @media (max-width: 900px) {
     gap: 0.5rem;
   }
 `
