@@ -198,7 +198,7 @@ const About = () => {
         <AboutSection>
           <h1>Josh Arrowsmith</h1>
           <p>
-            I specialize in Front-end development mainly React and{' '}
+            I specialise in front-end development mainly using React and
             <motion.span
               onMouseEnter={() => setCursorHovered(true)}
               onMouseLeave={() => setCursorHovered(false)}
@@ -206,7 +206,7 @@ const About = () => {
               {' '}
               React Native
             </motion.span>
-            , i have been taking a diving deep into the JamStack and serverless
+            . I have had a recent focus and interest on jamstack and serverless
             architecture using{' '}
             <motion.span
               onMouseEnter={() => setCursorHovered(true)}
@@ -215,9 +215,9 @@ const About = () => {
               {' '}
               Gatsby{' '}
             </motion.span>{' '}
-            and GraphQL and Shopify. I have two years experience working at
-            digital agencies doing Wordpress and Shopify development with a
-            little Neto on the side. if you would like to get in contact{' '}
+            , GraphQL and Shopify. I have two years experience working at
+            digital agencies developing wordpress and shopify applications with
+            a little neto on the side.{' '}
             <motion.span
               onMouseEnter={() => setCursorHovered(true)}
               onMouseLeave={() => setCursorHovered(false)}

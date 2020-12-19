@@ -24,6 +24,7 @@ const NavStyles = styled(motion.div)`
     display: flex;
     margin: 1rem;
     justify-content: flex-end;
+    gap: 1rem;
   }
   a {
     text-decoration: none;
@@ -58,7 +59,7 @@ export default function Nav() {
           onMouseLeave={() => setCursorHovered(false)}
         >
           <Link to="/">Home</Link>
-          {/* <Link to="/FaceOff">Projects</Link> */}
+          <Link to="/blog">blog</Link>
         </motion.li>
       </div>
       <Cursor

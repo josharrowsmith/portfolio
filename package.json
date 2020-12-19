@@ -39,7 +39,12 @@
     "react-icons": "^4.1.0",
     "react-use": "^15.3.4",
     "styled-components": "^5.2.0",
-    "terser": "^4.6.11"
+    "terser": "^4.6.11",
+    "@mdx-js/loader": "1.6.18",
+    "@mdx-js/mdx": "1.6.18",
+    "@mdx-js/react": "^1.6.18",
+    "@mdx-js/tag": "0.20.3",
+    "gatsby-plugin-mdx": "^1.2.41"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
