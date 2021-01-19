@@ -125,6 +125,7 @@ const Languages = styled.div`
 
 const Projects = data => {
   const { isMobile } = useDeviceDetect()
+  console.log(data)
 
   return (
     <ProjectsSection

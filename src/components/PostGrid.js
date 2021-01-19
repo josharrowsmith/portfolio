@@ -9,7 +9,7 @@ const PostGridItem = styled.div`
   display: grid;
   grid-template-columns: 30% 1fr;
   grid-gap: 3rem;
-  border-block-end: 1px solid var(--yellow);
+  border-block-end: 1px solid var(--color-text);
   padding: 4rem 0;
   @media (max-width: 800px) {
     grid-template-columns: 1fr;

@@ -6,7 +6,9 @@ import PostGrid, { PostGridItem } from '../components/PostGrid'
 
 const HomePageGrid = styled.div`
   display: grid;
-  justify-items: center;
+  grid-template-columns: 1fr;
+  max-width: 880px;
+  margin: 0px auto;
 `
 
 function IndexPage({ data }) {
