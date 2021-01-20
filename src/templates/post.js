@@ -4,6 +4,12 @@ import Img from 'gatsby-image'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import styled from 'styled-components'
 
+const PostContainer = styled.div`
+  max-width: 800px;
+  margin: 0px auto;
+  padding: 2rem;
+`
+
 const PostHeaderStyles = styled.header`
   h1 {
     margin-bottom: 0;
@@ -55,7 +61,7 @@ export const pageQuery = graphql`
 export default function Post({ data: { mdx: post }, scope, pageContext }) {
   console.log(post)
   return (
-    <>
+    <PostContainer>
       <Img fluid={post.frontmatter.image.childImageSharp.fluid} />
       <PostHeaderStyles>
         <h1>{post.frontmatter.title}</h1>
@@ -64,6 +70,6 @@ export default function Post({ data: { mdx: post }, scope, pageContext }) {
           <span>{post.frontmatter.category.join(', ')}</span>
         </div>
       </PostHeaderStyles>
-    </>
+    </PostContainer>
   )
 }

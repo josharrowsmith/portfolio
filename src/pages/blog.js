@@ -14,6 +14,7 @@ const HomePageGrid = styled.div`
 function IndexPage({ data }) {
   return (
     <HomePageGrid>
+      <h1>Josh Arrowsmith blog</h1>
       <PostGrid>
         {data.allMdx &&
           data.allMdx.edges.map(function ({ node: post }) {
