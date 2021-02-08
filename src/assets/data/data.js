@@ -1,6 +1,29 @@
 export const ProjectData = [
   {
     id: 0,
+    name: 'AskJoshAQuestion',
+    descrption:
+      'A Twitch extension which lets the user ask the a twitch streamer a question while offline. This then allow the streamer to answer such question in there extension setting page',
+    github: 'https://github.com/josharrowsmith/AskJoshAQuestion',
+    twitch: 'https://www.twitch.tv/p/extensions/',
+    tags: [
+      'react',
+      'hooks',
+      'tailwind css',
+      'aws',
+      'amplify',
+      'dynamodb',
+      'lambda',
+      'severless',
+      'cloud',
+      'node',
+      'express',
+      'webpack',
+      'rest',
+    ],
+  },
+  {
+    id: 1,
     name: 'Skatepark App',
     descrption:
       'A React Native aplication to find skateparks near you ! You can search, rate and find new parks in your area or chnage you location with a drop of a pin',
@@ -21,7 +44,7 @@ export const ProjectData = [
     ],
   },
   {
-    id: 1,
+    id: 2,
     name: 'Twitch Overlay',
     descrption:
       'A Twitch extension video overlay which tracks statistics from the Destiny 2 API in realtime, using socket.io to create a connection between the streamer and all his viewers',
@@ -41,7 +64,7 @@ export const ProjectData = [
     ],
   },
   {
-    id: 2,
+    id: 3,
     name: 'Hang Man',
     descrption:
       'A hang man game implemented in the C programming language using BSD sockets on the Linux operating system',
@@ -49,7 +72,7 @@ export const ProjectData = [
     tags: ['c', 'multithreading', 'sockets'],
   },
   {
-    id: 3,
+    id: 4,
     name: 'Parks',
     descrption:
       'A Webiste build to help find parks facilities in and around Brisbane ',
@@ -57,14 +80,14 @@ export const ProjectData = [
     tags: ['php', 'mysql', 'css', 'html', 'PDO'],
   },
   {
-    id: 4,
+    id: 5,
     name: 'FaceOff',
     descrption:
       'A aplication which lets you login with your face using facial recognition',
     github: 'https://github.com/josharrowsmith/face-off-App',
     tags: [
       'react-native',
-      ' Kairos API',
+      'kairos API',
       'firebase',
       'cloudinary',
       'facial recognition',

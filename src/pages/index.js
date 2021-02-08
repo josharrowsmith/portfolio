@@ -27,6 +27,20 @@ function IndexPage({ data }) {
 
 export const query = graphql`
   query {
+    twitchAsk: file(relativePath: { eq: "twitchAsk.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    mtwitchAsk: file(relativePath: { eq: "questionAnswer.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 600) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
     skatePark: file(relativePath: { eq: "skatePark.png" }) {
       childImageSharp {
         fluid(maxWidth: 800) {

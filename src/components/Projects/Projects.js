@@ -137,6 +137,7 @@ const Projects = data => {
       {isMobile ? (
         <ProjectContainer>
           {ProjectData.map((project, i) => {
+            const mtwitchAsk = data.images.mtwitchAsk.childImageSharp.fluid
             const skatePark = data.images.skatePark.childImageSharp.fluid
             const twitch = data.images.twitch.childImageSharp.fluid
             const HangMan = data.images.hangMan.childImageSharp.fluid
@@ -150,7 +151,7 @@ const Projects = data => {
                 <AssetContainer>
                   {i === 0 && (
                     <StyledImage
-                      fluid={skatePark}
+                      fluid={mtwitchAsk}
                       imgStyle={{
                         objectFit: 'cover',
                       }}
@@ -158,13 +159,21 @@ const Projects = data => {
                   )}
                   {i === 1 && (
                     <StyledImage
+                      fluid={skatePark}
+                      imgStyle={{
+                        objectFit: 'cover',
+                      }}
+                    />
+                  )}
+                  {i === 2 && (
+                    <StyledImage
                       fluid={twitch}
                       imgStyle={{
                         objectFit: 'contain',
                       }}
                     />
                   )}
-                  {i === 2 && (
+                  {i === 3 && (
                     <StyledImage
                       fluid={HangMan}
                       imgStyle={{
@@ -172,7 +181,7 @@ const Projects = data => {
                       }}
                     />
                   )}
-                  {i === 3 && (
+                  {i === 4 && (
                     <StyledImage
                       style={{ width: '80%' }}
                       fluid={Parks}
@@ -181,7 +190,7 @@ const Projects = data => {
                       }}
                     />
                   )}
-                  {i === 4 && (
+                  {i === 5 && (
                     <StyledImage
                       fluid={FaceOff}
                       imgStyle={{
@@ -251,6 +260,7 @@ const Projects = data => {
           <Container>
             <DragSlider>
               {ProjectData.map((project, i) => {
+                const twitchAsk = data.images.twitchAsk.childImageSharp.fluid
                 const skatePark = data.images.skatePark.childImageSharp.fluid
                 const twitch = data.images.twitch.childImageSharp.fluid
                 const HangMan = data.images.hangMan.childImageSharp.fluid
@@ -264,15 +274,15 @@ const Projects = data => {
                     <AssetContainer>
                       {i === 0 && (
                         <StyledImage
-                          fluid={skatePark}
+                          fluid={twitchAsk}
                           imgStyle={{
-                            objectFit: 'contain',
+                            objectFit: 'cover',
                           }}
                         />
                       )}
                       {i === 1 && (
                         <StyledImage
-                          fluid={twitch}
+                          fluid={skatePark}
                           imgStyle={{
                             objectFit: 'contain',
                           }}
@@ -280,13 +290,21 @@ const Projects = data => {
                       )}
                       {i === 2 && (
                         <StyledImage
-                          fluid={HangMan}
+                          fluid={twitch}
                           imgStyle={{
                             objectFit: 'contain',
                           }}
                         />
                       )}
                       {i === 3 && (
+                        <StyledImage
+                          fluid={HangMan}
+                          imgStyle={{
+                            objectFit: 'contain',
+                          }}
+                        />
+                      )}
+                      {i === 4 && (
                         <StyledImage
                           style={{ width: '80%' }}
                           fluid={Parks}
@@ -295,7 +313,7 @@ const Projects = data => {
                           }}
                         />
                       )}
-                      {i === 4 && (
+                      {i === 5 && (
                         <StyledImage
                           fluid={FaceOff}
                           imgStyle={{
