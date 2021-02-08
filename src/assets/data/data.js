@@ -3,7 +3,7 @@ export const ProjectData = [
     id: 0,
     name: 'AskJoshAQuestion',
     descrption:
-      'A Twitch extension which lets the user ask the a twitch streamer a question while offline. This then allow the streamer to answer such question in there extension setting page',
+      'A Twitch extension that lets the user ask the twitch streamer a question while offline. The streamer can then answer such questions on their extension setting page',
     github: 'https://github.com/josharrowsmith/AskJoshAQuestion',
     twitch: 'https://www.twitch.tv/p/extensions/',
     tags: [
