@@ -14,7 +14,6 @@ const transitionStyles = css`
 export const TLink = props => {
   const { to, children, styles } = props
   const { setTransition } = useContext(TransitionContext)
-  console.log(to)
   return (
     <Link
       to={to}
@@ -25,6 +24,7 @@ export const TLink = props => {
         setTransition(false)
         setTimeout(() => {
           navigate(to)
+          setTransition(true)
         }, 1800)
       }}
     >

@@ -73,13 +73,14 @@ const PageTransition = () => {
     setPlayState(transition)
   }, [transition])
   return (
-    <AnimatePresence>
+    <AnimatePresence exitBeforeEnter>
       {playState && (
         <motion.div
           variants={parentVariants}
           initial="visible"
           animate="hidden"
           exit="visible"
+          key={location && location.pathname ? location.pathname : 'error'}
           aria-hidden
           css={css`
             width: 100%;
@@ -94,7 +95,7 @@ const PageTransition = () => {
               height: 25vh;
               margin-top: -5vh;
               width: 100vw;
-              background-color: #3466bf;
+              background-color: var(--color-text);
               transform-origin: right;
             }
             > figure {
@@ -130,7 +131,7 @@ const PageTransition = () => {
             {' '}
           </motion.div>
           <motion.figure variants={childVariantHead} exit="visible" key={5}>
-            <h1>hey</h1>
+            <h1 style={{ color: '#000' }}>hey</h1>
           </motion.figure>
         </motion.div>
       )}
