@@ -107,6 +107,17 @@ const ContactGrid = styled.div`
   }
 `
 
+const DoubleClickMe = styled.h2`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 2.5rem;
+  background: linear-gradient(to right, #00f260 0%, #0575e6 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.3rem;
+`
+
 const Cursor = styled(motion.div)`
   height: 40px;
   width: 40px;
@@ -194,6 +205,7 @@ const About = () => {
               <FaLinkedin />
             </motion.a>
           </ContactGrid>
+          <DoubleClickMe>double click</DoubleClickMe>
         </Infromation>
         <AboutSection>
           <h1>Josh Arrowsmith</h1>
@@ -226,6 +238,7 @@ const About = () => {
             </motion.span>
           </p>
         </AboutSection>
+
         <Cursor
           animate={{
             x: elX - 16,

@@ -24,7 +24,9 @@ const NavStyles = styled(motion.div)`
     display: flex;
     margin: 1rem;
     justify-content: flex-end;
-    gap: 1rem;
+  }
+  li > * + * {
+    margin-left: 1rem;
   }
   a {
     text-decoration: none;
