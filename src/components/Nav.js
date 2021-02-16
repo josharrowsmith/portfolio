@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import { useMouse } from 'react-use'
 import DarkToggle from './Toggle/DarkToggle'
 import { ThemeContext } from '../context/ThemeProvider'
+import useDeviceDetect from './hooks/useDeviceDetect'
 
 const NavStyles = styled(motion.div)`
   display: flex;
@@ -49,6 +50,7 @@ export default function Nav() {
   const ref = useRef(null)
   const { elX, elY } = useMouse(ref)
   const { colorMode } = React.useContext(ThemeContext)
+  const { isMobile } = useDeviceDetect()
 
   return (
     <NavStyles ref={ref}>
@@ -64,20 +66,22 @@ export default function Nav() {
           <Link to="/blog">blog</Link>
         </motion.li>
       </div>
-      <Cursor
-        initial={{ x: -100 }}
-        animate={{
-          x: elX - 16,
-          y: elY - 16,
-          scale: cursorHovered ? 1.2 : 1,
-          opacity: cursorHovered ? 1 : 0,
-          background: colorMode === 'light' ? 'transparent' : 'white',
-        }}
-        transition={{
-          ease: 'linear',
-          duration: 0.2,
-        }}
-      />
+      {!isMobile && (
+        <Cursor
+          initial={{ x: -100 }}
+          animate={{
+            x: elX - 16,
+            y: elY - 16,
+            scale: cursorHovered ? 1.2 : 1,
+            opacity: cursorHovered ? 1 : 0,
+            background: colorMode === 'light' ? 'transparent' : 'white',
+          }}
+          transition={{
+            ease: 'linear',
+            duration: 0.2,
+          }}
+        />
+      )}
     </NavStyles>
   )
 }
