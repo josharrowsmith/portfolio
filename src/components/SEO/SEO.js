@@ -14,12 +14,11 @@ export default function SEO({ children, location, description, title, image }) {
     }
   `)
   return (
-    <Helmet titleTemplate={`%s - ${site.siteMetadata.title}`}>
+    <Helmet>
       <html lang="en" />
-      <title>{title}</title>
+      <title>{site.siteMetadata.title}</title>
       {/* Fav Icons */}
-      <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-      <link rel="alternate icon" href="/favicon.ico" />
+      <link rel="icon" type="image/svg+xml" href="/fries.png" />
       {/* Meta Tags */}
       <meta
         name="viewport"
@@ -29,7 +28,7 @@ export default function SEO({ children, location, description, title, image }) {
       <meta name="description" content={site.siteMetadata.description} />
       {/* Open Graph */}
       {location && <meta property="og:url" content={location.href} />}
-      <meta property="og:image" content={image || '/logo.svg'} />
+      <meta property="og:image" content={image || '/fries.png'} />
       <meta property="og:title" content={title} key="ogtitle" />
       <meta
         propery="og:site_name"

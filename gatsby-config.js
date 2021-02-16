@@ -3,9 +3,9 @@ const path = require(`path`)
 export default {
   pathPrefix: '/portfolio',
   siteMetadata: {
-    title: `Josh Arrowsmith`,
+    title: `Josh Arrowsmith - Full Stack Developer`,
     siteUrl: 'https://josharrowsmith.com',
-    description: 'This will be my portfolio site',
+    description: 'This is my portfolio site',
   },
   plugins: [
     'gatsby-plugin-react-helmet',

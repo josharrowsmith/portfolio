@@ -36,7 +36,7 @@ export default function Layout({ children }) {
   return (
     <ThemeProvider>
       <>
-        <SEO metaData="hey" />
+        <SEO />
         <GlobalStyles />
         <Typography />
         <>
