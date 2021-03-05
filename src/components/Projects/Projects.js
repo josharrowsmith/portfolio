@@ -4,7 +4,7 @@ import Img from 'gatsby-image'
 import mix from 'mix-color'
 import { motion } from 'framer-motion'
 import { FaGithub, FaTwitch, FaGooglePlay } from 'react-icons/fa'
-import useDeviceDetect from '../hooks/useDeviceDetect'
+import { useWindowSize } from 'react-use'
 import { DragSlider } from '../Slider/DragSlider'
 import { Container, FlexItem } from '../Slider/Box'
 import { ProjectData } from '../../assets/data/data'
@@ -124,8 +124,7 @@ const Languages = styled.div`
 `
 
 const Projects = data => {
-  const { isMobile } = useDeviceDetect()
-  console.log(data)
+  const { width, height } = useWindowSize()
 
   return (
     <ProjectsSection
@@ -134,7 +133,7 @@ const Projects = data => {
       exit={{ opacity: 0 }}
       transition={{ delay: 0.8 }}
     >
-      {isMobile ? (
+      {width < 800 ? (
         <ProjectContainer>
           {ProjectData.map((project, i) => {
             const mtwitchAsk = data.images.mtwitchAsk.childImageSharp.fluid
