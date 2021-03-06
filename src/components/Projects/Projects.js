@@ -155,7 +155,7 @@ const Projects = data => {
                     <StyledImage
                       fluid={mtwitchAsk}
                       imgStyle={{
-                        objectFit: 'contain',
+                        objectFit: 'cover',
                       }}
                     />
                   )}
