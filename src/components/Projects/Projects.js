@@ -136,7 +136,7 @@ const Projects = data => {
       exit={{ opacity: 0 }}
       transition={{ delay: 0.8 }}
     >
-      {width < 800 ? (
+      {mobile ? (
         <ProjectContainer>
           {ProjectData.map((project, i) => {
             const mtwitchAsk = data.images.mtwitchAsk.childImageSharp.fluid
@@ -155,7 +155,7 @@ const Projects = data => {
                     <StyledImage
                       fluid={mtwitchAsk}
                       imgStyle={{
-                        objectFit: 'cover',
+                        objectFit: 'contain',
                       }}
                     />
                   )}
