@@ -73,9 +73,6 @@ const ProjectContainer = styled.div`
   justify-content: flex-start;
   align-items: center;
   width: 100%;
-  @media (max-width: 900px) {
-    max-width: 600px;
-  }
 `
 
 const ProjectName = styled.div`
