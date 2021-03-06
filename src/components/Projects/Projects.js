@@ -5,6 +5,7 @@ import mix from 'mix-color'
 import { motion } from 'framer-motion'
 import { FaGithub, FaTwitch, FaGooglePlay } from 'react-icons/fa'
 import { useWindowSize } from 'react-use'
+import useDeviceDetect from '../hooks/useDeviceDetect'
 import { DragSlider } from '../Slider/DragSlider'
 import { Container, FlexItem } from '../Slider/Box'
 import { ProjectData } from '../../assets/data/data'
@@ -125,6 +126,8 @@ const Languages = styled.div`
 
 const Projects = data => {
   const { width, height } = useWindowSize()
+  const { mobile } = useDeviceDetect()
+  console.log(width)
 
   return (
     <ProjectsSection
@@ -152,7 +155,7 @@ const Projects = data => {
                     <StyledImage
                       fluid={mtwitchAsk}
                       imgStyle={{
-                        objectFit: 'cover',
+                        objectFit: 'contain',
                       }}
                     />
                   )}
