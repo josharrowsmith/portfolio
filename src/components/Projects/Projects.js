@@ -153,7 +153,7 @@ const Projects = data => {
                 <AssetContainer>
                   {i === 0 && (
                     <StyledImage
-                      fluid={skatePark}
+                      fluid={mtwitchAsk}
                       imgStyle={{
                         objectFit: 'contain',
                       }}
