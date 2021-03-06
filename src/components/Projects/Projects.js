@@ -23,6 +23,7 @@ const ProjectsSection = styled(motion.div)`
     overflow-y: scroll;
   }
 `
+
 const DragMe = styled.p`
   transform: rotate(90deg);
   &:before {
