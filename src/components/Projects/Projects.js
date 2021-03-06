@@ -10,7 +10,7 @@ import { DragSlider } from '../Slider/DragSlider'
 import { Container, FlexItem } from '../Slider/Box'
 import { ProjectData } from '../../assets/data/data'
 
-const ProjectsSection = styled(motion.div)`
+const ProjectsSection = styled.div`
   display: flex;
   width: 100%;
   height: calc(100vh - 4rem);
@@ -129,12 +129,7 @@ const Projects = data => {
   const { width } = useWindowSize()
 
   return (
-    <ProjectsSection
-      animate={{ opacity: 1 }}
-      initial={{ opacity: 0 }}
-      exit={{ opacity: 0 }}
-      transition={{ delay: 0.8 }}
-    >
+    <ProjectsSection>
       {width < 800 ? (
         <ProjectContainer>
           {ProjectData.map((project, i) => {
