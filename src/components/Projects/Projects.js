@@ -125,9 +125,7 @@ const Languages = styled.div`
 `
 
 const Projects = data => {
-  const { width, height } = useWindowSize()
-  const { mobile } = useDeviceDetect()
-  console.log(width)
+  const { width } = useWindowSize()
 
   return (
     <ProjectsSection
