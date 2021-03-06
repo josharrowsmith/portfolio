@@ -4,12 +4,13 @@ import Img from 'gatsby-image'
 import mix from 'mix-color'
 import { motion } from 'framer-motion'
 import { FaGithub, FaTwitch, FaGooglePlay } from 'react-icons/fa'
+import { useWindowSize } from 'react-use'
 import useDeviceDetect from '../hooks/useDeviceDetect'
 import { DragSlider } from '../Slider/DragSlider'
 import { Container, FlexItem } from '../Slider/Box'
 import { ProjectData } from '../../assets/data/data'
 
-const ProjectsSection = styled(motion.div)`
+const ProjectsSection = styled.div`
   display: flex;
   width: 100%;
   height: calc(100vh - 4rem);
@@ -22,6 +23,7 @@ const ProjectsSection = styled(motion.div)`
     overflow-y: scroll;
   }
 `
+
 const DragMe = styled.p`
   transform: rotate(90deg);
   &:before {
@@ -71,9 +73,6 @@ const ProjectContainer = styled.div`
   justify-content: flex-start;
   align-items: center;
   width: 100%;
-  @media (max-width: 900px) {
-    max-width: 600px;
-  }
 `
 
 const ProjectName = styled.div`
@@ -124,17 +123,11 @@ const Languages = styled.div`
 `
 
 const Projects = data => {
-  const { isMobile } = useDeviceDetect()
-  console.log(data)
+  const { width } = useWindowSize()
 
   return (
-    <ProjectsSection
-      animate={{ opacity: 1 }}
-      initial={{ opacity: 0 }}
-      exit={{ opacity: 0 }}
-      transition={{ delay: 0.8 }}
-    >
-      {isMobile ? (
+    <ProjectsSection>
+      {width < 800 ? (
         <ProjectContainer>
           {ProjectData.map((project, i) => {
             const mtwitchAsk = data.images.mtwitchAsk.childImageSharp.fluid
@@ -153,7 +146,7 @@ const Projects = data => {
                     <StyledImage
                       fluid={mtwitchAsk}
                       imgStyle={{
-                        objectFit: 'cover',
+                        objectFit: 'contain',
                       }}
                     />
                   )}
@@ -272,7 +265,7 @@ const Projects = data => {
                 return (
                   <FlexItem key={project.id}>
                     <AssetContainer>
-                      {i === 0 && (
+                      {i === 0 && width > 800 && (
                         <StyledImage
                           fluid={twitchAsk}
                           imgStyle={{
