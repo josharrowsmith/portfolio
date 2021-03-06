@@ -259,7 +259,7 @@ const Projects = data => {
         </ProjectContainer>
       ) : (
         <>
-          <Container>
+          {/* <Container>
             <DragSlider>
               {ProjectData.map((project, i) => {
                 const twitchAsk = data.images.twitchAsk.childImageSharp.fluid
@@ -383,7 +383,7 @@ const Projects = data => {
               })}
             </DragSlider>
           </Container>
-          <DragMe>Drag Me</DragMe>
+          <DragMe>Drag Me</DragMe> */}
         </>
       )}
     </ProjectsSection>
