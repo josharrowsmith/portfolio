@@ -8,7 +8,9 @@ export const Container = styled.div`
   overflow-y: hidden;
   margin-top: 4rem;
   @media (max-width: 900px) {
-    display: none;
+    width: 100%;
+    margin-top: 0;
+    height: auto;
   }
 `
 
@@ -26,7 +28,6 @@ export const Box = styled(motion.div)`
     width: 250px;
     height: 300px;
     margin-right: 1rem;
-    display: none;
   }
 `
 
