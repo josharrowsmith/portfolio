@@ -50,3 +50,18 @@ export const ThemeProvider = ({ children }) => {
     </ThemeContext.Provider>
   )
 }
+
+export const TransitionContext = React.createContext(undefined)
+export const TransitionContextProvider = props => {
+  const [transition, setTransition] = React.useState(true)
+  return (
+    <TransitionContext.Provider
+      value={{
+        transition,
+        setTransition,
+      }}
+    >
+      {props.children}
+    </TransitionContext.Provider>
+  )
+}

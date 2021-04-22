@@ -6,6 +6,7 @@ import { useMouse } from 'react-use'
 import DarkToggle from './Toggle/DarkToggle'
 import { ThemeContext } from '../context/ThemeProvider'
 import useDeviceDetect from './hooks/useDeviceDetect'
+import { TLink } from './TLink'
 
 const NavStyles = styled(motion.div)`
   display: flex;
@@ -62,8 +63,8 @@ export default function Nav() {
           onMouseEnter={() => setCursorHovered(true)}
           onMouseLeave={() => setCursorHovered(false)}
         >
-          <Link to="/">Home</Link>
-          <Link to="/blog">blog</Link>
+          <TLink to="/">Home</TLink>
+          <TLink to="/blog">blog</TLink>
         </motion.li>
       </div>
       {!isMobile && (

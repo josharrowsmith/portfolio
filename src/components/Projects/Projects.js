@@ -388,4 +388,4 @@ const Projects = data => {
   )
 }
 
-export default 
+export default Projects
