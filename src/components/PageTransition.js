@@ -108,7 +108,6 @@ export const PageTransition = () => {
           initial="visible"
           animate="hidden"
           exit="visible"
-          key={location && location.pathname ? location.pathname : 'error'}
           aria-hidden
         >
           <motion.div variants={childVariants} exit="visible" key={0}>
