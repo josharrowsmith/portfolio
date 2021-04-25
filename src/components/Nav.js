@@ -63,8 +63,8 @@ export default function Nav() {
           onMouseEnter={() => setCursorHovered(true)}
           onMouseLeave={() => setCursorHovered(false)}
         >
-          <TLink to="/">Home</TLink>
-          <TLink to="/blog">blog</TLink>
+          <Link to="/">Home</Link>
+          <Link to="/blog">blog</Link>
         </motion.li>
       </div>
       {!isMobile && (
