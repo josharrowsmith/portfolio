@@ -1,8 +1,12 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import Amplify from 'aws-amplify'
 import styled from 'styled-components'
+import config from '../aws-exports'
 import About from '../components/About/About'
 import Projects from '../components/Projects/Projects'
+
+Amplify.configure(config)
 
 const HomePageGrid = styled.div`
   display: grid;

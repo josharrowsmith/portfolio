@@ -1,4 +1,4 @@
-import React, { useState, useRef, Fragment } from 'react'
+import React, { useState, useRef, Fragment, useEffect } from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 import { useMouse } from 'react-use'
@@ -9,11 +9,14 @@ import {
   FaLinkedin,
   FaGooglePlay,
 } from 'react-icons/fa'
+import Amplify, { API, graphqlOperation } from 'aws-amplify'
 import { Accordion } from './Accordion'
 import Scroll from '../../assets/images/hire.svg'
 import { ThemeContext } from '../../context/ThemeProvider'
 import ExplosionScren from '../Explosion/ExplosionScren'
 import useDoubleClick from '../hooks/useDoubleClick'
+import * as mutations from '../../graphql/mutations'
+import * as subscriptions from '../../graphql/subscriptions'
 
 const AboutMeGrid = styled.div`
   display: grid;
@@ -137,10 +140,31 @@ const About = () => {
   const { elX, elY } = useMouse(ref)
   const { colorMode } = React.useContext(ThemeContext)
   const [trigger, setTrigger] = useState(false)
+  const [hit, setHit] = useState(undefined)
   function changebackgroundColor() {
     setTrigger(!trigger)
   }
   const [refCallback] = useDoubleClick(changebackgroundColor)
+
+  async function fetchHits(id) {
+    const counter = await API.graphql(
+      graphqlOperation(mutations.hit, { input: { id } })
+    )
+    setHit(counter.data.hit.hits)
+  }
+
+  function subscribeCounter(id) {
+    API.graphql(graphqlOperation(subscriptions.hits, { id })).subscribe({
+      next: counter => {
+        setHit(counter.value.data.hits.hits)
+      },
+    })
+  }
+
+  useEffect(() => {
+    fetchHits('visitors')
+    subscribeCounter('visitors')
+  }, [])
 
   return (
     <div ref={refCallback}>
@@ -205,7 +229,7 @@ const About = () => {
               <FaLinkedin />
             </motion.a>
           </ContactGrid>
-          <DoubleClickMe>double click</DoubleClickMe>
+          <DoubleClickMe>{hit}</DoubleClickMe>
         </Infromation>
         <AboutSection>
           <h1>Josh Arrowsmith</h1>
@@ -238,7 +262,6 @@ const About = () => {
             </motion.span>
           </p>
         </AboutSection>
-
         <Cursor
           animate={{
             x: elX - 16,
