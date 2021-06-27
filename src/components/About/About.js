@@ -17,6 +17,7 @@ import ExplosionScren from '../Explosion/ExplosionScren'
 import useDoubleClick from '../hooks/useDoubleClick'
 import * as mutations from '../../graphql/mutations'
 import * as subscriptions from '../../graphql/subscriptions'
+import { Counter } from '../Counter/Counter'
 
 const AboutMeGrid = styled.div`
   display: grid;
@@ -229,7 +230,7 @@ const About = () => {
               <FaLinkedin />
             </motion.a>
           </ContactGrid>
-          <DoubleClickMe>{hit}</DoubleClickMe>
+          <Counter hits={hit} />
         </Infromation>
         <AboutSection>
           <h1>Josh Arrowsmith</h1>
