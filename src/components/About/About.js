@@ -9,7 +9,7 @@ import {
   FaLinkedin,
   FaGooglePlay,
 } from 'react-icons/fa'
-import Amplify, { API, graphqlOperation } from 'aws-amplify'
+import { API, graphqlOperation } from 'aws-amplify'
 import { Accordion } from './Accordion'
 import Scroll from '../../assets/images/hire.svg'
 import { ThemeContext } from '../../context/ThemeProvider'
@@ -23,7 +23,6 @@ const AboutMeGrid = styled.div`
   display: grid;
   grid-template-columns: 30% 70%;
   grid-template-rows: 350px 1fr;
-  justify-items: center;
   height: 100%;
   @media (max-width: 1400px) {
     grid-template-columns: 1fr;
@@ -109,17 +108,6 @@ const ContactGrid = styled.div`
   @media (max-width: 900px) {
     grid-row-start: 5;
   }
-`
-
-const DoubleClickMe = styled.h2`
-  width: 100%;
-  display: flex;
-  align-items: center;
-  font-size: 2.5rem;
-  background: linear-gradient(to right, #00f260 0%, #0575e6 50%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 0.3rem;
 `
 
 const Cursor = styled(motion.div)`

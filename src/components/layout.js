@@ -1,17 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 import { motion, AnimatePresence } from 'framer-motion'
-import { useWindowSize } from 'react-use'
-import {
-  ThemeProvider,
-  TransitionContextProvider,
-} from '../context/ThemeProvider'
+import { ThemeProvider } from '../context/ThemeProvider'
 import SEO from './SEO/SEO'
 import 'normalize.css'
 import GlobalStyles from '../styles/GlobalStyles'
 import Typography from '../styles/Typography'
 import Nav from './Nav'
-import { PageTransition } from './PageTransition'
 
 const duration = 0.5
 

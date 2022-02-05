@@ -6,7 +6,6 @@ import { useMouse } from 'react-use'
 import DarkToggle from './Toggle/DarkToggle'
 import { ThemeContext } from '../context/ThemeProvider'
 import useDeviceDetect from './hooks/useDeviceDetect'
-import { TLink } from './TLink'
 
 const NavStyles = styled(motion.div)`
   display: flex;

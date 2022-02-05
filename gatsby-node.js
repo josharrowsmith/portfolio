@@ -2,7 +2,7 @@ const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 const projectData = require('./src/assets/data/data.js')
 
-async function makeProjects({ graphql, actions }) {
+async function makeProjects({ actions }) {
   const project = path.resolve('./src/templates/project.js')
   projectData.ProjectData.forEach(projectObject => {
     const { name } = projectObject
