@@ -12,3 +12,14 @@ export const hit = /* GraphQL */ `
     }
   }
 `;
+export const like = /* GraphQL */ `
+  mutation Like(
+    $input: CreateLikedInput!
+    $condition: ModelLikedConditionInput
+  ) {
+    like(input: $input, condition: $condition) {
+      id
+      likes
+    }
+  }
+`;

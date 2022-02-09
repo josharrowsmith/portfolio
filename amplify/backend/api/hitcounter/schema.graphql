@@ -1,15 +1,23 @@
 type Counter
-    @model(
-        queries: { get: "counter" },
-        mutations: { create: "hit" },
-        subscriptions: null
-    )
-{
-    id: String!
-    hits: Int
+@model(
+  queries: { get: "counter" }
+  mutations: { create: "hit" }
+  subscriptions: null
+) {
+  id: String!
+  hits: Int
 }
 
 type Subscription {
-    hits(id: String!): Counter
-        @aws_subscribe(mutations: ["hit"])
+  hits(id: String!): Counter @aws_subscribe(mutations: ["hit"])
+}
+
+type Liked
+@model(
+  queries: { get: "liked" }
+  mutations: { create: "like" }
+  subscriptions: null
+) {
+  id: String!
+  likes: Int
 }

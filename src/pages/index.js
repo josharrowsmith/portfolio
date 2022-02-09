@@ -75,7 +75,7 @@ export const query = graphql`
     }
     parks: file(relativePath: { eq: "parks.png" }) {
       childImageSharp {
-        fluid(maxWidth: 800) {
+        fluid(maxWidth: 450, maxHeight: 350) {
           ...GatsbyImageSharpFluid
         }
       }

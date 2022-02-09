@@ -2,6 +2,7 @@ export const ProjectData = [
   {
     id: 0,
     name: 'AskJoshAQuestion',
+    key: 'twitchAsk',
     descrption:
       'A Twitch extension that lets the user ask the twitch streamer a question while offline. The streamer can then answer such questions on their extension setting page',
     github: 'https://github.com/josharrowsmith/AskJoshAQuestion',
@@ -25,6 +26,7 @@ export const ProjectData = [
   {
     id: 1,
     name: 'Skatepark App',
+    key: 'skatePark',
     descrption:
       'A React Native aplication to find skateparks near you ! You can search, rate and find new parks in your area or chnage you location with a drop of a pin',
     github: 'https://github.com/josharrowsmith/skateparks-app',
@@ -46,6 +48,7 @@ export const ProjectData = [
   {
     id: 2,
     name: 'Twitch Overlay',
+    key: 'twitch',
     descrption:
       'A Twitch extension video overlay which tracks statistics from the Destiny 2 API in realtime, using socket.io to create a connection between the streamer and all his viewers',
     github: 'https://github.com/josharrowsmith/TwitchOverlay',
@@ -66,6 +69,7 @@ export const ProjectData = [
   {
     id: 3,
     name: 'Hang Man',
+    key: 'hangMan',
     descrption:
       'A hang man game implemented in the C programming language using BSD sockets on the Linux operating system',
     github: 'https://github.com/josharrowsmith/Hangman',
@@ -74,6 +78,7 @@ export const ProjectData = [
   {
     id: 4,
     name: 'Parks',
+    key: 'parks',
     descrption:
       'A Webiste build to help find parks facilities in and around Brisbane ',
     github: 'https://github.com/josharrowsmith/Parks',
@@ -82,6 +87,7 @@ export const ProjectData = [
   {
     id: 5,
     name: 'FaceOff',
+    key: 'faceOff',
     descrption:
       'A aplication which lets you login with your face using facial recognition',
     github: 'https://github.com/josharrowsmith/face-off-App',

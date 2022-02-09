@@ -6,8 +6,14 @@ export const counter = /* GraphQL */ `
     counter(id: $id) {
       id
       hits
-      createdAt
-      updatedAt
+    }
+  }
+`;
+export const liked = /* GraphQL */ `
+  query Liked($id: ID!) {
+    liked(id: $id) {
+      id
+      likes
     }
   }
 `;
