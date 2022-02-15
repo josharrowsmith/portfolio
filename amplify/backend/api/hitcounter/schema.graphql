@@ -12,12 +12,8 @@ type Subscription {
   hits(id: String!): Counter @aws_subscribe(mutations: ["hit"])
 }
 
-type Liked
-@model(
-  queries: { get: "liked" }
-  mutations: { create: "like" }
-  subscriptions: null
-) {
-  id: String!
-  likes: Int
+type Liked @model {
+  id: ID!
+  projectId: String!
+  likes: String
 }

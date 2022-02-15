@@ -140,7 +140,6 @@ const About = () => {
       graphqlOperation(mutations.hit, { input: { id } })
     )
     setHit(counter.data.hit.hits)
-    console.log(counter)
   }
 
   function subscribeCounter(id) {
@@ -152,8 +151,8 @@ const About = () => {
   }
 
   useEffect(() => {
-    fetchHits('visitors')
-    subscribeCounter('visitors')
+    // fetchHits('visitors')
+    // subscribeCounter('visitors')
   }, [])
 
   return (
